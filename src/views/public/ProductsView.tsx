@@ -1,0 +1,36 @@
+import { useQuery } from "@tanstack/react-query"
+import CategorySidebar from "../../components/products/CategorySidebar"
+import { getAllProduct } from "../../api/ProductApi"
+import CardProduct from "../../components/products/CardProduct"
+
+
+
+export default function ProductsView() {
+
+
+    const { data, isLoading } = useQuery({
+        queryKey: ['productsOrder'],
+        queryFn: getAllProduct
+    })
+
+    if (isLoading) return 'Cargando...'
+
+    if (data) return (
+        <>
+            <div className="flex gap-5">
+                <aside className=" lg:w-72 lg:h-screen bg-white pt-4 fixed flex">
+                    <CategorySidebar />
+                </aside>
+                <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center ml-80">
+                    <h1 className="font-bold text-2xl justify-start">{data.length} Productos encontrados</h1>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mx-auto">
+                        {data.map(product => (
+                            <CardProduct key={product.id} product={product} />
+                        ))}
+                    </div>
+                </div>
+            </div>
+
+        </>
+    )
+}
