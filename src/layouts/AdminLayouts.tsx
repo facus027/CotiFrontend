@@ -2,6 +2,7 @@ import { Link, Outlet, useNavigate } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import Logo from '../components/ui/Logo'
+import UpdatePriceModal from '../components/admin/products/UpdatePriceModal'
 
 export default function AdminLayouts() {
 
@@ -9,7 +10,7 @@ export default function AdminLayouts() {
 
     return (
         <>
-            <header className='py-2 flex flex-row lg:flex-col mx-auto w-3/5'>
+            <header className='py-2 flex flex-row lg:flex-col mx-auto w-4/5'>
 
                 <Logo />
 
@@ -17,7 +18,7 @@ export default function AdminLayouts() {
                     <ul className='flex justify-between mx-auto items-center my-5'>
                         <li >
                             <Link
-                                className="border border-gray-200 text-black rounded-lg shadow-xl hover:bg-amber-400 px-10 p-1 text-sm 
+                                className="border border-gray-200 text-black rounded-lg shadow-xl hover:bg-oreange-pastel px-10 p-1 text-sm 
                         font-bold cursor-pointer transition-colors"
                                 to="/admin/create"
                             >
@@ -27,18 +28,27 @@ export default function AdminLayouts() {
                         <li>
                             <button
                                 type='button'
-                                className="border border-gray-200 text-black rounded-lg shadow-xl hover:bg-amber-400 px-10 p-1 text-sm 
+                                className="border border-gray-200 text-black rounded-lg shadow-xl hover:bg-oreange-pastel px-10 p-1 text-sm 
                         font-bold cursor-pointer transition-colors"
                                 onClick={() => navigate(location.pathname + '?newTask=true')}
                             >
                                 Actualizar Precios
                             </button>
                         </li>
-                        <li className="border border-gray-200 text-black rounded-lg shadow-xl hover:bg-amber-400 px-10 p-1 text-sm 
+                        <li >
+                            <Link
+                                className="border border-gray-200 text-black rounded-lg shadow-xl hover:bg-oreange-pastel px-10 p-1 text-sm 
+                        font-bold cursor-pointer transition-colors"
+                                to={`/admin/order/${'pendiente'}`}
+                            >
+                                Ver Ordenes
+                            </Link>
+                        </li>
+                        <li className="border border-gray-200 text-black rounded-lg shadow-xl hover:bg-oreange-pastel px-10 p-1 text-sm 
                         font-bold cursor-pointer transition-colors">
                             Ingresar Pedido
                         </li>
-                        <li className="border border-gray-200 text-black rounded-lg shadow-xl hover:bg-amber-400 px-10 p-1 text-sm 
+                        <li className="border border-gray-200 text-black rounded-lg shadow-xl hover:bg-oreange-pastel px-10 p-1 text-sm 
                         font-bold cursor-pointer transition-colors">
                             Ver Pedidos
                         </li>
@@ -57,6 +67,7 @@ export default function AdminLayouts() {
             </div>
 
             <ToastContainer />
+            <UpdatePriceModal />
         </>
     )
 }

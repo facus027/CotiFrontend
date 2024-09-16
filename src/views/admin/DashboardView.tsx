@@ -1,7 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { getAllProduct } from "../../api/ProductApi";
 import TableProducts from "../../components/admin/products/TableProducts";
-import UpdatePriceModal from "../../components/admin/products/UpdatePriceModal";
 import { useState } from "react";
 import { IoSearchSharp } from "react-icons/io5";
 
@@ -115,10 +114,10 @@ export default function DashboardView() {
                 </div>
 
             ) : (
-                <p className=" text-center py-20">No Hay Proyectos aún</p>
+                <p className=" text-center py-20">No Hay Productos aún</p>
             )}
 
-            <UpdatePriceModal />
+
         </>
     )
 

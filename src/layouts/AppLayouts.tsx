@@ -10,7 +10,7 @@ export default function AppLayouts() {
                 <Header />
             </div>
 
-            <section className="w-full mx-auto p-5">
+            <section className="w-full mx-auto">
                 <Outlet />
             </section>
 

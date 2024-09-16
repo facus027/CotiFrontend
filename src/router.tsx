@@ -9,6 +9,9 @@ import ProductsView from './views/public/ProductsView'
 import ProductsCategoryView from './views/public/ProductsCategoryView'
 import OrderLayouts from './layouts/OrderLayouts'
 import OrderView from './views/order/OrderView'
+import CheckOutView from './views/order/CheckOutView'
+import OrderViewAdmin from './views/admin/orderAdmin/OrderViewAdmin'
+
 
 
 export default function Router() {
@@ -19,6 +22,7 @@ export default function Router() {
                 <Route element={<AppLayouts />}>
                     <Route element={<HomeView />} path='/' index />
                     <Route element={<OrderView />} path='/carrito' />
+                    <Route element={<CheckOutView />} path='/checkout/:cel' />
                 </Route>
                 <Route element={<OrderLayouts />}>
                     <Route element={<ProductsView />} path='/products' />
@@ -28,6 +32,7 @@ export default function Router() {
                     <Route element={<DashboardView />} path='/admin' />
                     <Route element={<CreateProducts />} path='/admin/create' />
                     <Route element={<EditProductsView />} path='/admin/:productId/edit' />
+                    <Route element={<OrderViewAdmin />} path='/admin/order/:status' />
                 </Route>
             </Routes>
         </BrowserRouter>

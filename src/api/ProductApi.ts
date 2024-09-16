@@ -24,9 +24,24 @@ export async function uploadImage(formData:FormData) {
     }
 }
 
+type PaginationProps = {
+    totalItems:number,
+    totalPages:number,
+    currentPage:number,
+    products:Product[],
+}
+
+export const fetchProducts = async (page: number, pageSize: number) => {
+    const { data } = await api.get<PaginationProps>('/products/pagina', {
+      params: { page, pageSize },
+    });
+    console.log(data)
+    return data;
+  };
+
 export async function createProduct( formData : ProductFormData) {
     try {
-        const { data } = await api.post('/products', formData);
+        const { data } = await api.post<string>('/products', formData);
         return data;
     } catch (error) {
         if(isAxiosError(error) && error.response){

@@ -119,10 +119,10 @@ export default function UpdatePriceModal() {
                                                 {...register("category", {
                                                     required: "La Categoria del Producto es obligatorio",
                                                 })}>
-                                                <option value="">Seleccione Categoria</option>
+                                                <option value="" className='uppercase'>Seleccione Categoria</option>
 
                                                 {Categories.map(category => (
-                                                    <option key={category} value={category}>{category}</option>
+                                                    <option key={category} className='uppercase' value={category}>{category}</option>
                                                 ))}
                                             </select>
                                         </div>
@@ -131,8 +131,8 @@ export default function UpdatePriceModal() {
                                         <input
                                             type="submit"
                                             value="Actualizar Precios"
-                                            className=" bg-amber-600 hover:bg-amber-700 w-full p-3 text-white uppercase
-                                             font-bold cursor-pointer transition-colors"
+                                            className="bg-orange-light hover:bg-orange-dark rounded-lg w-full p-3 text-white uppercase
+         font-bold cursor-pointer transition-colors"
                                         />
                                     </form>
 

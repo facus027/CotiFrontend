@@ -3,6 +3,7 @@ import { useStore } from "../../store/store";
 import { OrderItems } from "../../types";
 import { formatCurrency } from "../../util";
 import { XCircleIcon, MinusIcon, PlusIcon } from '@heroicons/react/24/outline'
+import { Link } from "react-router-dom";
 
 type OrderPopupProps = {
     order: OrderItems[]
@@ -15,13 +16,13 @@ export default function OrderPopup({ order }: OrderPopupProps) {
 
 
     return (
-        <div className="absolute top-3 right-32 mt-10 w-64 bg-white border border-gray-300 shadow-lg rounded-lg z-40">
+        <div className="absolute top-5 right-24 mt-10 w-64 bg-white border border-gray-300 shadow-lg rounded-lg z-40">
             {order.length > 0 ? (
                 order.map(item => (
                     <div className="shadow space-y-1 p-4 bg-white  border-t border-gray-200 ">
                         <div className="space-y-1">
                             <div className="flex justify-between items-start">
-                                <p className="text-base font-bold">{item.name} </p>
+                                <p className="text-base font-gloria font-bold">{item.name} </p>
 
                                 <button
                                     type="button"
@@ -76,6 +77,13 @@ export default function OrderPopup({ order }: OrderPopupProps) {
                 Total a Pagar: {''}
                 <span className="font-bold  text-amber-500">{formatCurrency(total)}</span>
             </p>
+            <div className="">
+
+                <Link className="justify-center flex" to="/carrito">
+                    <button className="py-1 bg-orange-dark font-chewy tracking-wider text-yellow-pastel rounded-lg border-gray-400 hover:text-white w-2/3 m-2">Ir a carrito</button>
+                </Link>
+
+            </div>
         </div>
     )
 }

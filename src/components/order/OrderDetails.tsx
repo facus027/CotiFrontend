@@ -23,9 +23,9 @@ export default function OrderDetails({ item }: OrderDetailsProps) {
                     <div className="flex flex-row gap-7 items-center">
                         <div className=" grid grid-cols-2 justify-center gap-6 ml-10">
 
-                            <p className="text-xl font-bold text-start">{item.name} </p>
+                            <p className="text-xl font-gloria font-semibold text-start">{item.name} </p>
 
-                            <p className="text-2xl text-amber-500 font-black text-start">
+                            <p className="text-2xl font-chewy text-amber-500 font-black text-start">
                                 {formatCurrency(item.price)}
                             </p>
                         </div>
@@ -40,7 +40,7 @@ export default function OrderDetails({ item }: OrderDetailsProps) {
                                     <MinusIcon className="h-6 w-6" />
                                 </button>
 
-                                <p className="text-lg font-black ">
+                                <p className="text-lg font-chewy font-black ">
                                     {item.quantity}
                                 </p>
 
@@ -57,7 +57,7 @@ export default function OrderDetails({ item }: OrderDetailsProps) {
                         <div className="flex justify-center gap-4 mx-auto">
                             <p className="text-xl font-black flex flex-col justify-center text-gray-700 ">
                                 Subtotal: {''}
-                                <span className="font-normal ml-5">
+                                <span className="font-normal font-chewy ml-5">
                                     {formatCurrency(item.price)}
                                 </span>
                             </p>

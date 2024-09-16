@@ -7,7 +7,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import { useState } from 'react'
 import { useStore } from '../store/store'
 import OrderPopup from '../components/order/OrderPopup'
-
+import { ToastContainer } from 'react-toastify'
 
 
 export default function OrderLayouts() {
@@ -18,24 +18,25 @@ export default function OrderLayouts() {
 
     return (
         <>
-            <div className=' min-w-full flex flex-col lg:flex-row lg:justify-around  items-center '>
-                <div className='ml-44'>
+            <div className=' min-w-full flex flex-col lg:flex-row lg:justify-around items-center mt-3'>
+                <div className='ml-64'>
                     <Logo />
                 </div>
                 <div className='w-1/3'>
                     <SearchPRoducts />
                 </div>
-                <div className='p-1 rounded-full hover:bg-amber-300'
+                <div className='p-1 rounded-full'
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}>
-                    <div
-
-                    >
-                        <Link to={'/carrito'}>
-                            <FaShoppingCart size={30} />
-                        </Link>
-
-                        <div
+                    <div className='fixed right-10 top-10 z-40'>
+                        <div>
+                            <span className='absolute rounded-full z-10 menu-item-a bg-orange-light p-1 ml-16 -top-3 text-white font-baloo text-2xl font-light hover:text-black'
+                            >{order.length}</span>
+                            <p className="menu-item">
+                                <Link className="menu-item-a bg-orange-light hover:text-white rounded-full p-2" to="/carrito"><FaShoppingCart size={35} /></Link>
+                            </p>
+                        </div>
+                        <div className='relative bottom-24 left-8'
                             onMouseEnter={() => setIsHovered(true)}
                             onMouseLeave={() => setIsHovered(false)}>
                             {isHovered && <OrderPopup order={order} />}
@@ -44,9 +45,7 @@ export default function OrderLayouts() {
                 </div>
             </div>
 
-
-
-            <section className="w-full mx-auto p-5 mt-2">
+            <section className="w-full mx-auto p-5">
                 <Outlet />
             </section>
 
@@ -54,6 +53,18 @@ export default function OrderLayouts() {
                 <Footer />
             </div>
             <ProductDetailModal />
+            <ToastContainer
+                position="top-center"
+                autoClose={1500}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="colored"
+            />
         </>
     )
 }

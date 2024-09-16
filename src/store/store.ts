@@ -1,5 +1,7 @@
 import { create } from 'zustand'
 import { OrderItems, Product } from '../types'
+import { persist } from 'zustand/middleware';
+
 
 interface Store {
     order: OrderItems[]
@@ -9,12 +11,14 @@ interface Store {
     removeItems : (id: Product['id']) => void
 }
 
-export const useStore = create<Store>((set,get) => ({
+export const useStore = create<Store>()(
+    persist(
+        (set, get) => ({
+                    order: [],
 
-    order: [],
     addToOrder: (product) => {
         
-        const { description,availability,category, ...data } = product
+        const { availability,category, ...data } = product
         let order : OrderItems[] = []
         if (get().order.find( item => item.id === product.id)) {
             order = get().order.map(item => item.id === product.id ? {
@@ -29,7 +33,6 @@ export const useStore = create<Store>((set,get) => ({
                 subtotal: 1 * product.price
             }] 
         }
-        
         set(() => ({
             order
         }))
@@ -59,6 +62,9 @@ export const useStore = create<Store>((set,get) => ({
         set((state) => ({
             order: state.order.filter(item=>item.id !== id)
         }))
-    }
-    
-}))
+    },
+        }), {
+            name: 'order-storage', // Nombre en Local Storage
+
+    })
+)

@@ -13,7 +13,7 @@ export default function Footer() {
                         href="https://www.facebook.com/people/Cotillon-San-Martin/100064042417602/?locale=pt_BR" target="_blank"
                     ><FaFacebook size={30} /></a></li>
                     <li className="hover:bg-green-300 rounded-full m-1 transition-colors" ><a
-                        href="https://wa.me/5492634616444" target="_blank"
+                        href="https://wa.me/5492634475135" target="_blank"
                     ><FaWhatsapp size={30} /></a></li>
                     <li className="hover:bg-amber-300 rounded-full m-1 transition-colors" ><a
                         href="https://www.instagram.com/cotillon.sanmartin/" target="_blank"

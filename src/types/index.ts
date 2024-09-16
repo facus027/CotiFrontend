@@ -1,4 +1,4 @@
-import z from 'zod'
+import z  from 'zod'
 
 export const CategoriesSchema = z.enum(['reposteria','decoracion','carnaval','globos','golosinas','souvenirs','decoracion Torta','combos','fiestas Patrias','disfrases', ""])
 
@@ -41,10 +41,51 @@ export type ProductFormData = Pick<Product, 'name' | 'description' | 'category' 
 
 export const ImageSchemma = z.string()
 
-export type OrderItems = Pick<Product, 'id' | 'name' | 'image' | 'price'> & {
+export type OrderItems = Pick<Product, 'id' | 'name' | 'image' | 'price'|'description'> & {
     quantity: number,
     subtotal:number
 }
+
+export type Order = {
+    id:number
+    name: string, 
+    date:Date,
+    cel: string,
+    total: number,
+    wayToPay: string,
+    status:string,
+    order:OrderItems[]
+}
+
+export type OrderFormData = Pick<Order, 'name' | 'cel'|'wayToPay'>
+
+export type OrderType = z.infer<typeof OrderSchema>
+
+export const OrderSchema = z.object({
+    id:z.number(),
+    name: z.string(),
+    date:z.date(),
+    cel: z.string(),
+    total: z.number(),
+    wayToPay: z.string(),
+    status:z.string(),
+    order: z.array(
+        z.object({
+            id: z.number(),
+            name: z.string(),
+            image: z.string(),
+            price: z.number(),
+            quantity: z.number(),
+            subtotal: z.number(),
+            description:z.string()
+        })
+    )
+})
+
+export const DashboardOrderSchema = z.array( OrderSchema)
+
+
+    
 
 
 

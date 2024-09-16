@@ -21,32 +21,43 @@ export default function SearchPRoducts() {
 
     if (isLoading) return 'Cargando...'
     return (
-        <div className="w-full bg-gray-100 flex items-center justify-center border border-gray-300 rounded-2xl p-3 gap-3 hover:border-black">
-            <div className=" justify-center">
-                <IoSearchSharp size={30} />
+        <>
+            <div className="w-full bg-gray-100 flex flex-col items-center justify-center border border-amber-300 rounded-2xl p-3 gap-3 hover:border-yellow-600">
+                <div className="flex gap-4">
+
+                    <IoSearchSharp size={30} />
+
+                    <div className="w-80 mx-auto justify-center">
+                        <input
+                            type="text"
+                            className="w-full p-2 rounded-2xl font-baloo"
+                            placeholder=" ¿Que estas Buscando?"
+                            value={searchTerm}
+                            onChange={handleSearchChange}
+                        />
+                    </div>
+                </div>
             </div>
-            <div className="w-full mx-auto justify-center">
-                <input
-                    type="text"
-                    className="w-full p-2 rounded-2xl"
-                    placeholder="Buscar Producto"
-                    value={searchTerm}
-                    onChange={handleSearchChange}
-                />
+            <div className=" absolute w-1/3 bg-white rounded-2xl">
                 {
                     searchTerm && data!.map(product => ((product.name.toLowerCase().includes(searchTerm.toLowerCase()) || searchTerm === '') && (
-                        <ul key={product.id}>
-                            <li>
-                                <Link to={`/products?seeProduct=true&productId=${product.id}`}>
-                                    {product.name}
-                                </Link>
-                            </li>
-                        </ul>
+                        <div className="flex flex-col justify-center items-center p-1 border-b rounded-xl border-gray-400">
+                            <ul key={product.id}>
+                                <li className="font-baloo">
+                                    <Link to={`/products?seeProduct=true&productId=${product.id}`}>
+                                        {product.name}
+                                    </Link>
+                                </li>
+                            </ul>
+                        </div>
                     )))
                 }
-
             </div>
-        </div>
+
+
+
+        </>
+
     );
 };
 

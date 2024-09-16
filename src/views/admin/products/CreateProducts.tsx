@@ -47,11 +47,8 @@ export default function CreateProducts() {
   }
 
 
-  const handleForm = (formData: ProductFormData) => {
+  const handleForm = (formData: ProductFormData) => mutate(formData)
 
-    console.log(formData)
-    mutate(formData)
-  }
   return (
     <>
 
@@ -60,7 +57,7 @@ export default function CreateProducts() {
 
         <nav className="my-5">
           <Link
-            className="border border-gray-200 text-black rounded-lg shadow-xl hover:bg-amber-400 px-10 p-1 text-sm 
+            className="border border-gray-200 text-black rounded-lg shadow-xl hover:bg-oreange-pastel px-10 p-1 text-sm 
                         font-bold cursor-pointer transition-colors"
             to="/admin"
           >
@@ -102,7 +99,7 @@ export default function CreateProducts() {
             <input
               type="submit"
               value="Crear Producto"
-              className=" bg-orange-600 hover:bg-orange-700 w-full p-3 text-white uppercase
+              className=" bg-orange-light hover:bg-orange-dark rounded-lg w-full p-3 text-white uppercase
          font-bold cursor-pointer transition-colors"
             />
           </form>

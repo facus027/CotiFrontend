@@ -5,7 +5,7 @@ export default function Logo() {
         <div className=" flex justify-center">
             <div >
                 <Link to={'/'}>
-                    <img className="w-60 h-28" alt="Logotipo CotillonSm" src="https://res.cloudinary.com/dwxwejuvu/image/upload/v1720015148/aje7gfpd898we6jjj07i.png" />
+                    <img className="w-44 h-28" alt="Logotipo CotillonSm" src="https://res.cloudinary.com/dwxwejuvu/image/upload/v1722520949/r24lgbeiyz1j3xs3mllv.png" />
                 </Link>
             </div>
         </div>

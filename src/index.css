@@ -1,3 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600&family=Chewy&family=Luckiest+Guy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer base{
+
+    @font-face {
+        font-family: 'TrebuchetMS';
+        src: url('../public/fonts/TrebuchetMS.ttf');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'BebasNeue';
+        src: url('../public/fonts/BebasNeue.otf');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+
+.bebas{
+    font-family: 'BebasNeue';
+}
+
+.trebuchet{
+    text-shadow: '8px 8px 6px white';
+    font-family: 'TrebuchetMS';
+
+}
+
+.element-to-animate {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .element-to-animate.in-view {
+    opacity: 1;
+    @apply   animate-from-bellow 
+  }
+
+  .element-to-animate-text.in-view {
+    opacity: 1;
+    @apply  tracking-wider animate-from-right text-5xl text-center uppercase text-yellow-pastel
+  }
+
+ 
+}
+
+@layer components{
+
+    /* Aplicando propiedades tailwindCss*/
+.menu-item{
+    @apply mx-5 tracking-wide flex-none font-chewy text-2xl
+}
+
+.menu-item-a{
+    @apply block transition duration-200 hover:text-orange-dark transform hover:scale-125 font-chewy text-2xl
+}
+
+.shadow-title{
+    font-family: 'BebasNeue';
+    text-shadow: '2px 2px 1px black',
+}
+
+}
