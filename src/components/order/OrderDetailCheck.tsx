@@ -16,28 +16,28 @@ export default function OrderDetailCheck({ data }: { data: Order }) {
                     <p>Direccion: <span>Calle Sarmiento 123</span></p>
                     <p>Celular: <span>2634475135</span></p>
                 </div>
-                <div className="border-t-2 border-dashed border-orange-dark">
-                    <table className="w-full divide-y divide-gray-300">
+                <div className="border-t-2 border-dashed w-full mr-4 lg:mr-0 border-orange-dark">
+                    <table className=" divide-y divide-gray-300">
                         <thead className="">
                             <tr className="">
                                 <th
                                     scope="col"
-                                    className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0"
+                                    className="py-3.5 pl-1 pr-1 text-left text-sm font-semibold text-gray-900 sm:pl-0"
                                 >Cant.
                                 </th>
                                 <th
                                     scope="col"
-                                    className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0"
+                                    className="py-3.5 pl-1 pr-1 text-left text-sm font-semibold text-gray-900 sm:pl-0"
                                 >Descripcion
                                 </th>
                                 <th
                                     scope="col"
-                                    className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0"
+                                    className="py-3.5 pl-1 pr-1 text-left text-sm font-semibold text-gray-900 sm:pl-0"
                                 >Precio
                                 </th>
                                 <th
                                     scope="col"
-                                    className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0"
+                                    className="py-3.5 pl-1 pr-1 text-left text-sm font-semibold text-gray-900 sm:pl-0"
                                 >SubTotal
                                 </th>
                             </tr>

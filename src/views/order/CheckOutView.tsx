@@ -23,60 +23,76 @@ export default function CheckOutView() {
 
   if (data) return (
     <div className="lg:ml-20">
-      <div className="mt-5 ">
-
+      <div className="mt-5">
         <BannerAnimate title={` ${data.name}, tu orden ha sido cargada.`} />
 
-        <div className="flex gap-5">
-          <div className="flex flex-col w-1/3 mx-5 gap-2 mb-5">
+        <div className="flex flex-col lg:flex-row gap-5 mt-5">
+          {/* Sección de detalle de orden */}
+          <div className="flex flex-col lg:w-1/3 mx-5 gap-2 mb-5">
             <OrderDetailCheck data={data} />
           </div>
 
-          <aside className=" lg:overflow-y-scroll md:w-64 lg:w-2/3 mt-10">
+          {/* Sección de pago */}
+          <aside className="lg:overflow-y-scroll w-full ml-4 lg:w-2/3 mt-10">
             {data.wayToPay === 'mercado pago' ? (
               <>
-                <h2 className="font-luckiest tracking-wider font-light text-2xl mb-5">El metodo de pago elegido fue '{data.wayToPay.toUpperCase()}'</h2>
-                <div className="flex gap-5 mt-5 font-chewy text-xl">
-                  <h2 className="">A continuacion te dejamos el Link de Pago:</h2>
-
-                  <p className=" text-base font-extralight text-blue-800 flex gap-2"><SiMercadopago size={30} />
-                    <a href="https://link.mercadopago.com.ar/facundodev" target="_blank"
-                      className="hover:underline hover:underline-offset-4 hover:decoration-wavy"> Mercado Pago</a>
+                <h2 className="font-luckiest tracking-wider font-light text-xl lg:text-2xl mb-5">
+                  El método de pago elegido fue '{data.wayToPay.toUpperCase()}'
+                </h2>
+                <div className="flex flex-col lg:flex-row gap-5 mt-5 font-chewy text-lg lg:text-xl">
+                  <h2 className="">A continuación te dejamos el link de pago:</h2>
+                  <p className="text-base font-extralight text-blue-800 flex gap-2">
+                    <SiMercadopago size={30} />
+                    <a
+                      href="https://link.mercadopago.com.ar/facundodev"
+                      target="_blank"
+                      className="hover:underline hover:underline-offset-4 hover:decoration-wavy"
+                    >
+                      Mercado Pago
+                    </a>
                   </p>
                 </div>
-                <div className="flex flex-col font-chewy text-xl gap-5 mt-5">
-                  <h2>Por ultimo tienes que enviar via WhatsApp el comprobante con el total del recibo.</h2>
-                  <p className="flex flex-col gap-5">Por si no lo tienes, te acercamos el contacto.{""}
+                <div className="flex flex-col font-chewy text-lg lg:text-xl gap-5 mt-5">
+                  <h2>Por último, envía el comprobante a través de WhatsApp con el total del recibo.</h2>
+                  <p className="flex flex-col gap-5">
+                    Si no tienes el contacto, aquí te lo acercamos:
                     <IconWhatsApp name={'Cotillon San Martin'} cel={'2634475135'} />
-                    <span>No olvides agendarnos para ver nuestras novedades y promociones en las historias </span></p>
-
+                    <span>No olvides agendar para ver nuestras novedades y promociones.</span>
+                  </p>
                 </div>
               </>
             ) : (
               <>
-                <h2 className="font-luckiest tracking-wider font-light text-2xl mb-5">El metodo de pago elegido fue: '{data.wayToPay.toUpperCase()}'</h2>
-                <div className="flex flex-col font-chewy text-xl gap-5 mt-5">
-                  <h2>El retiro de su orden se efectua en el local, pronto nos comunicaremos con vos para acordar el horario.</h2>
-                  <p className="flex text-xl flex-col gap-5">Por tienes una consulta, te acercamos el contacto.{""}
+                <h2 className="font-luckiest tracking-wider font-light text-xl lg:text-2xl mb-5">
+                  El método de pago elegido fue '{data.wayToPay.toUpperCase()}'
+                </h2>
+                <div className="flex flex-col font-chewy text-lg lg:text-xl gap-5 mt-5">
+                  <h2>Retira tu orden en el local, nos comunicaremos contigo para coordinar el horario.</h2>
+                  <p className="flex flex-col gap-5">
+                    Si tienes alguna consulta, aquí te dejamos el contacto:
                     <IconWhatsApp name={'Cotillon San Martin'} cel={'2634475135'} />
-                    <span>No olvides agendarnos para ver nuestras novedades y promociones en las historias </span></p>
+                    <span>No olvides agendar para ver nuestras novedades y promociones.</span>
+                  </p>
                 </div>
                 <div className="flex flex-col gap-5 mt-5">
-                  <h2 className="font-chewy text-xl">A continuacion te dejamos la ubicacion del local:</h2>
-
-                  <p className="font-chewy text-xl text-gray-600 flex gap-2"><GrMapLocation size={30} />
-                    <a href="https://link.mercadopago.com.ar/facundodev" target="_blank"
-                      className="hover:underline hover:underline-offset-4 hover:decoration-wavy">Calle Sarmiento 123</a>
+                  <h2 className="font-chewy text-lg lg:text-xl">Aquí te dejamos la ubicación del local:</h2>
+                  <p className="font-chewy text-lg lg:text-xl text-gray-600 flex gap-2">
+                    <GrMapLocation size={30} />
+                    <a
+                      href="https://link.mercadopago.com.ar/facundodev"
+                      target="_blank"
+                      className="hover:underline hover:underline-offset-4 hover:decoration-wavy"
+                    >
+                      Calle Sarmiento 123
+                    </a>
                   </p>
                 </div>
               </>
-
             )}
-
           </aside>
         </div>
       </div>
-
     </div>
+
   )
 }

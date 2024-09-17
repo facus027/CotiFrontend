@@ -31,10 +31,10 @@ export default function TitleHome({ title }: { title: string }) {
     return (
         <div
             ref={elementRef}
-            className={`ml-4 rounded-lg bg-banner-title  py-3 h-16 w-1/3 bg-cover duration-300 transition-all my-4 bg-banner-position overflow-hidden element-to-animate  ${isInView && 'in-view'} `}
+            className={`ml-4 rounded-lg bg-banner-title md:w-1/3 py-3 h-16 w-2/3 bg-cover duration-300 transition-all my-4 bg-banner-position overflow-hidden element-to-animate  ${isInView && 'in-view'} `}
         >
 
-            <h1 className={`font-chewy element-to-animate-text  ${isInView && 'in-view'} `}>
+            <h1 className={`font-chewy element-to-animate-text md:text-2xl text-sm  ${isInView && 'in-view'} `}>
                 {title}
             </h1>
 

@@ -13,8 +13,11 @@ export default function HomeView() {
 
                 <BannerAnimate title={"Bienvenido, Cotillon San Martin está a su servicio"} />
 
-                <div className="">
+                <div className="hidden md:block">
                     <Carousel />
+                </div>
+                <div className="hidden:lg my-32">
+                    <h1 className="text-2xl">Hola Mundo!</h1>
                 </div>
 
                 <div className="w-11/12 mx-auto mb-5 -mt-16">

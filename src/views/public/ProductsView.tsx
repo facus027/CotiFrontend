@@ -1,11 +1,12 @@
 import { useQuery } from "@tanstack/react-query"
 import CategorySidebar from "../../components/products/CategorySidebar"
-import { fetchProducts } from "../../api/ProductApi"
 import CardProduct from "../../components/products/CardProduct"
 import BannerAnimate from "../../components/ui/BannerAnimate"
+import { fetchProducts } from "../../api/ProductApi"
 import { useState } from "react"
 import { FaCircleArrowRight } from "react-icons/fa6";
 import { FaCircleArrowLeft } from "react-icons/fa6";
+import CategoryListBox from "../../components/products/CategoryListBox"
 
 
 export default function ProductsView() {
@@ -24,15 +25,20 @@ export default function ProductsView() {
 
     if (data) return (
         <>
-            <div className="flex gap-5">
-                <aside className=" lg:w-72 lg:h-screen bg-white pt-4 fixed flex">
+            <div className="flex gap-5 flex-col lg:flex-row">
+                <aside className="w-full lg:w-72 h-auto lg:h-screen hidden lg:block bg-white pt-4 lg:fixed">
                     <CategorySidebar />
                 </aside>
-                <div className="min-h-screen bg-gray-100 flex flex-col -mt-5 items-center justify-center ml-80">
-                    <div className="w-full mb-3 -mt-10">
+                <div className=" lg:hidden mx-auto">
+                    <CategoryListBox />
+                </div>
+
+                <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center lg:ml-80 w-full lg:w-auto">
+                    <div className="w-full mb-3">
                         <BannerAnimate title={`${data.products.length} Productos encontrados`} />
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mx-auto">
+
+                    <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mx-auto">
                         {data.products.map(product => (
                             <CardProduct key={product.id} product={product} />
                         ))}
@@ -54,7 +60,6 @@ export default function ProductsView() {
                         </button>
                     </div>
                 </div>
-
             </div>
 
         </>

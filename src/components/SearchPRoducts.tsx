@@ -9,6 +9,8 @@ import { Link } from "react-router-dom";
 export default function SearchPRoducts() {
 
     const [searchTerm, setSearchTerm] = useState('');
+    const MAX_SEARCH = 7
+
 
     const handleSearchChange = (e: any) => {
         setSearchTerm(e.target.value);
@@ -22,7 +24,7 @@ export default function SearchPRoducts() {
     if (isLoading) return 'Cargando...'
     return (
         <>
-            <div className="w-full bg-gray-100 flex flex-col items-center justify-center border border-amber-300 rounded-2xl p-3 gap-3 hover:border-yellow-600">
+            <div className="w-96 bg-gray-100 flex -mr-32 flex-col items-center justify-center border border-amber-300 rounded-2xl p-3 gap-3 hover:border-yellow-600">
                 <div className="flex gap-4">
 
                     <IoSearchSharp size={30} />
@@ -38,19 +40,22 @@ export default function SearchPRoducts() {
                     </div>
                 </div>
             </div>
-            <div className=" absolute w-1/3 bg-white rounded-2xl">
+            <div className=" absolute w-2/3 lg:w-1/3 bg-white rounded-2xl">
                 {
-                    searchTerm && data!.map(product => ((product.name.toLowerCase().includes(searchTerm.toLowerCase()) || searchTerm === '') && (
-                        <div className="flex flex-col justify-center items-center p-1 border-b rounded-xl border-gray-400">
-                            <ul key={product.id}>
-                                <li className="font-baloo">
-                                    <Link to={`/products?seeProduct=true&productId=${product.id}`}>
-                                        {product.name}
-                                    </Link>
-                                </li>
-                            </ul>
-                        </div>
-                    )))
+                    searchTerm && data?.filter(product =>
+                        product.name.toLowerCase().includes(searchTerm.toLowerCase()) || searchTerm === ''
+                    ).slice(0, MAX_SEARCH)
+                        .map(product => (
+                            <div key={product.id} className="flex flex-col justify-center z-40 items-center p-1 border-b rounded-xl border-gray-400">
+                                <ul>
+                                    <li className="font-baloo">
+                                        <Link to={`/products?seeProduct=true&productId=${product.id}`}>
+                                            {product.name}
+                                        </Link>
+                                    </li>
+                                </ul>
+                            </div>
+                        ))
                 }
             </div>
 

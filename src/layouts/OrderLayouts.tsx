@@ -18,11 +18,11 @@ export default function OrderLayouts() {
 
     return (
         <>
-            <div className=' min-w-full flex flex-col lg:flex-row lg:justify-around items-center mt-3'>
-                <div className='ml-64'>
+            <div className=' min-w-full flex flex-col lg:flex-row lg:justify-around gap-4 items-center mt-3'>
+                <div className='lg:ml-64'>
                     <Logo />
                 </div>
-                <div className='w-1/3'>
+                <div className='-ml-40 w-2/5 z-40'>
                     <SearchPRoducts />
                 </div>
                 <div className='p-1 rounded-full'
