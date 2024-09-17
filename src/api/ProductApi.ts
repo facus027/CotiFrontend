@@ -7,7 +7,7 @@ export async function uploadImage(formData:FormData) {
     try {
         
         const response = await api.post(
-            'products/upload',
+            '/products/upload',
             formData,
             {
                 headers: {
@@ -96,7 +96,7 @@ type ProductAPIType={
 
 export async function updateProduct({formData,productId}:ProductAPIType){
 try {
-   const { data } = await api.put<string>(`products/${productId}`,formData);
+   const { data } = await api.put<string>(`/products/${productId}`,formData);
    return data
 } catch (error) {
     if(isAxiosError(error) && error.response){
@@ -107,7 +107,7 @@ try {
 
 export async function deleteProduct(productId : Product['id']){
     try {
-       const { data } = await api.delete<string>(`products/${productId}`);
+       const { data } = await api.delete<string>(`/products/${productId}`);
        return data
     } catch (error) {
         if(isAxiosError(error) && error.response){
