@@ -7,7 +7,7 @@ export async function uploadImage(formData:FormData) {
     try {
         
         const response = await api.post(
-            '/products/upload',
+            '/api/products/upload',
             formData,
             {
                 headers: {
@@ -32,7 +32,7 @@ type PaginationProps = {
 }
 
 export const fetchProducts = async (page: number, pageSize: number) => {
-    const { data } = await api.get<PaginationProps>('/products/pagina', {
+    const { data } = await api.get<PaginationProps>('/api/products/pagina', {
       params: { page, pageSize },
     });
     console.log(data)
@@ -41,7 +41,7 @@ export const fetchProducts = async (page: number, pageSize: number) => {
 
 export async function createProduct( formData : ProductFormData) {
     try {
-        const { data } = await api.post<string>('/products', formData);
+        const { data } = await api.post<string>('/api/products', formData);
         return data;
     } catch (error) {
         if(isAxiosError(error) && error.response){
@@ -53,7 +53,7 @@ export async function createProduct( formData : ProductFormData) {
 export async function getAllProduct() {
 
     try {
-        const { data } = await api.get('/products');
+        const { data } = await api.get('/api/products');
         const response = DashboardProductSchema.safeParse(data);
         if (response.success) {
             return response.data
@@ -69,7 +69,7 @@ export async function getAllProduct() {
 
 export async function updateAvailabilityProduct( id : Product['id']) {
     try {
-        const { data } = await api.patch(`/products/${id}`);
+        const { data } = await api.patch(`/api/products/${id}`);
         return data;
     } catch (error) {
         if(isAxiosError(error) && error.response){
@@ -80,7 +80,7 @@ export async function updateAvailabilityProduct( id : Product['id']) {
 
 export async function getProductById( id : Product['id']) {
     try {
-        const { data } = await api.get(`/products/${id}`);
+        const { data } = await api.get(`/api/products/${id}`);
         return data;
     } catch (error) {
         if(isAxiosError(error) && error.response){
@@ -96,7 +96,7 @@ type ProductAPIType={
 
 export async function updateProduct({formData,productId}:ProductAPIType){
 try {
-   const { data } = await api.put<string>(`/products/${productId}`,formData);
+   const { data } = await api.put<string>(`/api/products/${productId}`,formData);
    return data
 } catch (error) {
     if(isAxiosError(error) && error.response){
@@ -107,7 +107,7 @@ try {
 
 export async function deleteProduct(productId : Product['id']){
     try {
-       const { data } = await api.delete<string>(`/products/${productId}`);
+       const { data } = await api.delete<string>(`/api/products/${productId}`);
        return data
     } catch (error) {
         if(isAxiosError(error) && error.response){
@@ -118,7 +118,7 @@ export async function deleteProduct(productId : Product['id']){
     
 export async function updatePriceCategory(formData: UpdatePrice) {
     try {
-        const { data } = await api.post<string>(`/products/updateCategory`, formData);
+        const { data } = await api.post<string>(`/api/products/updateCategory`, formData);
         return data
     } catch (error) {
         if (isAxiosError(error) && error.response) {
@@ -130,7 +130,7 @@ export async function updatePriceCategory(formData: UpdatePrice) {
 export async function getProductsByCategory(category : string) {
 
     try {
-        const { data } = await api.get(`/products/categoria/${category}`);
+        const { data } = await api.get(`/api/products/categoria/${category}`);
         const response = DashboardProductSchema.safeParse(data);
         if (response.success) {
             return response.data

@@ -6,7 +6,7 @@ export async function createOrder(formData:OrderFormData) {
     try {
         
        
-            const {data} = await api.post<string>('/order',formData);
+            const {data} = await api.post<string>('/api/order',formData);
             return data
        
     } catch (error) {
@@ -18,7 +18,7 @@ export async function createOrder(formData:OrderFormData) {
 
 export async function getOrderByCel(cel : Order['cel']) {
     try {
-        const { data } = await api.get(`/order/cel/${cel}`)
+        const { data } = await api.get(`/api/order/cel/${cel}`)
         return data
     } catch (error) {
         if(isAxiosError(error) && error.response){
@@ -34,7 +34,7 @@ type updateStatusByIdProps = {
 
 export async function updateStatusById({id,status}:updateStatusByIdProps) {
     try {
-        const { data } = await api.put<string>(`/order/status/${id}`, status)
+        const { data } = await api.put<string>(`/api/order/status/${id}`, status)
         console.log(data)
         return data;
 
@@ -48,7 +48,7 @@ export async function updateStatusById({id,status}:updateStatusByIdProps) {
 export async function getOrderByPendiente(status:string) {
     try {
 
-        const { data } = await api.get<Order[]>(`/order/status/${status}`)
+        const { data } = await api.get<Order[]>(`/api/order/status/${status}`)
         return data  
        
     } catch (error) {
