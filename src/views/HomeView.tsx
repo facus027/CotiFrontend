@@ -1,7 +1,9 @@
+import ProductsHomeByCategory from "../components/products/ProductsHomeByCategory";
 import BannerAnimate from "../components/ui/BannerAnimate";
 import BannerService from "../components/ui/BannerService";
 import CardCategory from "../components/ui/CardCategory";
 import Carousel from "../components/ui/Carousel";
+import Contact from "../components/ui/Contact";
 import TitleHome from "../components/ui/TitleHome";
 
 
@@ -16,7 +18,7 @@ export default function HomeView() {
                 <div className="hidden md:block">
                     <Carousel />
                 </div>
-                <div className="hidden:lg my-32">
+                <div className="md:hidden my-32">
                     <h1 className="text-2xl">Hola Mundo!</h1>
                 </div>
 
@@ -24,13 +26,31 @@ export default function HomeView() {
                     <BannerService />
                 </div>
 
+                <TitleHome title={"Souvenirs"} />
+                <ProductsHomeByCategory cols={2} category={"souvenirs"} />
+
                 <TitleHome title={"Categorias"} />
 
                 <div className="w-10/12 mx-auto mb-5">
                     <CardCategory />
                 </div>
 
-                <TitleHome title={"Souvenirs"} />
+                <div className="grid grid-cols-2">
+                    <div>
+                        <TitleHome title={"Combos"} />
+                        <ProductsHomeByCategory cols={1} category={"combos"} />
+                    </div>
+                    <div>
+                        <TitleHome title={"disfrases"} />
+                        <ProductsHomeByCategory cols={1} category={"disfrases"} />
+                    </div>
+
+                </div>
+                <div className="flex justify-center items-center">
+                    <Contact />
+                </div>
+
+                <TitleHome title={"Recetas"} />
 
             </body>
         </div>

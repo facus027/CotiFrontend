@@ -10,7 +10,7 @@ export default function AdminLayouts() {
 
     return (
         <>
-            <header className='py-2 flex flex-row lg:flex-col mx-auto w-4/5'>
+            <header className='py-2 flex flex-row lg:flex-col mx-auto w-11/12'>
 
                 <Logo />
 
@@ -51,6 +51,15 @@ export default function AdminLayouts() {
                         <li className="border border-gray-200 text-black rounded-lg shadow-xl hover:bg-oreange-pastel px-10 p-1 text-sm 
                         font-bold cursor-pointer transition-colors">
                             Ver Pedidos
+                        </li>
+                        <li >
+                            <Link
+                                className="border border-gray-200 text-black rounded-lg shadow-xl hover:bg-oreange-pastel px-10 p-1 text-sm 
+                        font-bold cursor-pointer transition-colors"
+                                to={`/admin/recipe`}
+                            >
+                                Ingresar Receta
+                            </Link>
                         </li>
                     </ul>
                 </nav>

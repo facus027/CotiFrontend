@@ -84,6 +84,15 @@ export const OrderSchema = z.object({
 
 export const DashboardOrderSchema = z.array( OrderSchema)
 
+export type ProductsDemo = {
+        id: number,
+        name: string,
+        description: string,
+        price: number,
+        availability: boolean,
+        image: string,
+        category: string    
+}
 
     
 

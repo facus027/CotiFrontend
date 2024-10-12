@@ -27,7 +27,7 @@ export default function CardProduct({ product }: { product: Product }) {
                 </div>
             </div>
             <div className="px-6 py-4">
-                <div className="font-bold font-gloria text-center text-lg mb-2">{product.name}</div>
+                <h1 className="font-bold font-gloria text-center text-lg mb-2">{product.name}</h1>
                 <p className="text-gray-700 font-baloo text-base">{product.description}</p>
             </div>
             <div className="px-6 pt-4 pb-2">

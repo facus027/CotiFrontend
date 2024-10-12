@@ -16,7 +16,7 @@ export default function Header() {
                 <div className="">
                     <ul className="flex flex-row h-20 items-center justify-between text-xl text-center uppercase">
                         <li className="menu-item">
-                            <a className="menu-item-a" href="/">FAQ</a>
+                            <a className="menu-item-a" href="/recetas">Recetas</a>
                         </li>
                         <li className="menu-item">
                             <a className="menu-item-a" href="/products">Productos</a>

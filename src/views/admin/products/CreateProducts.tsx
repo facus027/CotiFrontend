@@ -42,12 +42,13 @@ export default function CreateProducts() {
     }
   })
 
+  const handleForm = (formData: ProductFormData) => mutate(formData)
+
   const handleImage = (imageUrl: string) => {
     setImagen(imageUrl)
   }
 
 
-  const handleForm = (formData: ProductFormData) => mutate(formData)
 
   return (
     <>
