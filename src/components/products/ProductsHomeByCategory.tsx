@@ -20,7 +20,9 @@ export default function ProductsHomeByCategory({ cols, category }: ProductsHomeB
         retry: false
     })
 
-    const products = data ? data : productDemo
+    console.log(data)
+
+    const products = productDemo
 
     // Cambia automáticamente cada 5 segundos, avanzando de a 6 productos
     useEffect(() => {
@@ -47,7 +49,7 @@ export default function ProductsHomeByCategory({ cols, category }: ProductsHomeB
 
     return (
         <>
-            <div className={`grid grid-cols-${cols} m-7 gap-5`}>
+            <div className={`grid grid-cols-1 lg:grid-cols-${cols} m-7 gap-5`}>
                 {getVisibleProducts().map(product => (
                     <CardProductHome key={product.id} product={product} />
                 ))}

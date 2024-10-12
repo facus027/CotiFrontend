@@ -25,7 +25,7 @@ export default function ProductsView() {
 
     if (data) return (
         <>
-            <div className="flex gap-5 flex-col lg:flex-row">
+            <div className="flex gap-5 flex-col lg:flex-row overflow-x-hidden">
                 <aside className="w-full lg:w-72 h-auto lg:h-screen hidden lg:block bg-white pt-4 lg:fixed">
                     <CategorySidebar />
                 </aside>

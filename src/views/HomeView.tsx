@@ -15,12 +15,10 @@ export default function HomeView() {
 
                 <BannerAnimate title={"Bienvenido, Cotillon San Martin está a su servicio"} />
 
-                <div className="hidden md:block">
+                <div className="">
                     <Carousel />
                 </div>
-                <div className="md:hidden my-32">
-                    <h1 className="text-2xl">Hola Mundo!</h1>
-                </div>
+
 
                 <div className="w-11/12 mx-auto mb-5 -mt-16">
                     <BannerService />
@@ -35,7 +33,7 @@ export default function HomeView() {
                     <CardCategory />
                 </div>
 
-                <div className="grid grid-cols-2">
+                <div className="grid grid-cols-1 lg:grid-cols-2">
                     <div>
                         <TitleHome title={"Combos"} />
                         <ProductsHomeByCategory cols={1} category={"combos"} />

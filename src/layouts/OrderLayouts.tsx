@@ -19,7 +19,7 @@ export default function OrderLayouts() {
     return (
         <>
             <div className=' min-w-full flex flex-col lg:flex-row lg:justify-around gap-4 items-center mt-3'>
-                <div className='lg:ml-64'>
+                <div className='ml-0 lg:ml-64'>
                     <Logo />
                 </div>
                 <div className='-ml-40 w-2/5 z-40'>
@@ -45,7 +45,7 @@ export default function OrderLayouts() {
                 </div>
             </div>
 
-            <section className="w-full mx-auto p-5">
+            <section className="w-full mx-auto overflow-x-hidden p-2">
                 <Outlet />
             </section>
 
