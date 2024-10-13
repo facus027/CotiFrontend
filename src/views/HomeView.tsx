@@ -20,12 +20,12 @@ export default function HomeView() {
                 </div>
 
 
-                <div className="w-11/12 mx-auto mb-5 -mt-16">
+                <div className="w-11/12 mx-auto mb-5 mt-3 lg:mt-4">
                     <BannerService />
                 </div>
 
-                <TitleHome title={"Souvenirs"} />
-                <ProductsHomeByCategory cols={2} category={"souvenirs"} />
+                <TitleHome title={"disfrases"} />
+                <ProductsHomeByCategory cols={2} category={"disfrases"} />
 
                 <TitleHome title={"Categorias"} />
 
@@ -39,8 +39,8 @@ export default function HomeView() {
                         <ProductsHomeByCategory cols={1} category={"combos"} />
                     </div>
                     <div>
-                        <TitleHome title={"disfrases"} />
-                        <ProductsHomeByCategory cols={1} category={"disfrases"} />
+                        <TitleHome title={"souvenirs"} />
+                        <ProductsHomeByCategory cols={1} category={"souvenirs"} />
                     </div>
 
                 </div>

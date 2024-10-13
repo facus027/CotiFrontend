@@ -28,13 +28,13 @@ export async function getOrderByCel(cel : Order['cel']) {
 }
 
 type updateStatusByIdProps = {
-    id: number,
+    orderId: number,
     status:string
 }
 
-export async function updateStatusById({id,status}:updateStatusByIdProps) {
+export async function updateStatusById({orderId,status}:updateStatusByIdProps) {
     try {
-        const { data } = await api.put<string>(`/api/order/status/${id}`, status)
+        const { data } = await api.patch<string>(`/api/order/status/${orderId}`, {status : status})
         console.log(data)
         return data;
 

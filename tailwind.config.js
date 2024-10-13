@@ -27,9 +27,12 @@ export default {
         'banner-golosinas': "url('https://res.cloudinary.com/dwxwejuvu/image/upload/v1724668616/fjbyqovp6ndf6fsgwvvl.jpg')",
         'banner-reposteria': "url('https://res.cloudinary.com/dwxwejuvu/image/upload/v1724668619/ysiivpxdeftzwbnksd8k.jpg')",
         'banner-carrito': "url('https://res.cloudinary.com/dwxwejuvu/image/upload/v1724758834/yjg9jr9z122sykvlxvb7.jpg')",
-        'banner-slider1': "url('https://res.cloudinary.com/dwxwejuvu/image/upload/v1724497956/dbdemnsjya5wowr4gsq8.jpg')",
+        'banner-slider1': "url('https://res.cloudinary.com/dwxwejuvu/image/upload/v1728830669/lj2aqbnt3yikvde1rkvh.jpg')",
         'banner-slider2': "url('https://res.cloudinary.com/dwxwejuvu/image/upload/v1724497959/vu1jsllhwbqnbrdn6mh6.jpg')",
         'banner-slider3':"url('https://res.cloudinary.com/dwxwejuvu/image/upload/v1724497956/z2akejwq0goxkt1dqvqo.jpg')",
+        'banner-slider-responsive1': "url('https://res.cloudinary.com/dwxwejuvu/image/upload/v1728830679/ghuzynd2l4hguzqoex0v.jpg')",
+        'banner-slider-responsive2': "url('https://res.cloudinary.com/dwxwejuvu/image/upload/v1728830672/mdalatmxm0k9hxbyjbnb.jpg')",
+        'banner-slider-responsive3':"url('https://res.cloudinary.com/dwxwejuvu/image/upload/v1728830680/h1euolqgqaygtx1ndg2v.jpg')",
       },
       colors: {
         'orange-light': '#ff9800',

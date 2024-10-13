@@ -18,18 +18,29 @@ export default function OrderViewAdmin() {
 
     if (isLoading) return 'Cargando.....'
 
-    if (data) return (
+    return (
         <>
-            <aside className=" lg:w-72 lg:h-screen bg-white pt-4 fixed flex">
+            <aside className=" lg:w-72 lg:max-h-screen bg-white pt-4 fixed flex">
                 <StatusSidebarAdmin />
             </aside>
             <div className="max-h-screen w-2/3 bg-gray-100 items-center justify-center ml-96">
-                {data.map(order => (
+                {data?.length !== 0 ? (data?.map(order => (
                     <div key={order.id}>
                         <OrderDetaildAdmin data={order} />
                     </div>
 
-                ))}
+                ))
+                ) : (
+                    <div className="min-h-screen">
+                        <h1>Aún no hay ordenes en la seccion:
+                            <span className="uppercase font-bold ml-2">
+                                {status}
+                            </span>
+                        </h1>
+                    </div>
+
+                )
+                }
 
             </div>
         </>

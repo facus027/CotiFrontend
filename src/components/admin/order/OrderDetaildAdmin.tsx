@@ -6,9 +6,12 @@ import { toast } from 'react-toastify';
 import IconWhatsApp from "../../ui/IconWhatsApp"
 import { updateStatusById } from "../../../api/OrderApi";
 import ErrorMessage from "../ErrorMessage";
+import { useNavigate } from "react-router-dom";
 
 
 export default function OrderDetaildAdmin({ data }: { data: Order }) {
+
+    const navigate = useNavigate()
 
     const status = ['pendiente', 'pagado', 'para retirar', 'entregado']
 
@@ -25,18 +28,17 @@ export default function OrderDetaildAdmin({ data }: { data: Order }) {
             toast.error(error.message)
         },
         onSuccess: (data) => {
-            queryClient.invalidateQueries({ queryKey: ['ordersAdmin', status] })
-            toast.success(data)
-
+            queryClient.invalidateQueries({ queryKey: ['ordersAdmin', data] })
+            toast.success(`La orden ahora esta ${data}`)
+            navigate(`/admin/order/${data}`)
         }
     })
 
     const handleUpdateCategory = (formData: { status: string }) => {
         const updateOrder = {
-            id: data.id,
+            orderId: data.id,
             status: formData.status
         }
-        console.log(updateOrder)
         mutate(updateOrder)
     }
 

@@ -39,7 +39,7 @@ export default function CheckOutView() {
                 <h2 className="font-luckiest tracking-wider font-light text-xl lg:text-2xl mb-5">
                   El método de pago elegido fue '{data.wayToPay.toUpperCase()}'
                 </h2>
-                <div className="flex flex-col lg:flex-row gap-5 mt-5 font-chewy text-lg lg:text-xl">
+                <div className="flex flex-col lg:flex-row gap-5 lg:mt-5 font-chewy text-lg lg:text-xl">
                   <h2 className="">A continuación te dejamos el link de pago:</h2>
                   <p className="text-base font-extralight text-blue-800 flex gap-2">
                     <SiMercadopago size={30} />
@@ -52,12 +52,13 @@ export default function CheckOutView() {
                     </a>
                   </p>
                 </div>
-                <div className="flex flex-col font-chewy text-lg lg:text-xl gap-5 mt-5">
-                  <h2>Por último, envía el comprobante a través de WhatsApp con el total del recibo.</h2>
+                <div className="flex flex-col font-chewy text-lg lg:text-xl gap-5 lg:mt-5">
+
                   <p className="flex flex-col gap-5">
                     Si no tienes el contacto, aquí te lo acercamos:
                     <IconWhatsApp name={'Cotillon San Martin'} cel={'2634475135'} />
-                    <span>No olvides agendar para ver nuestras novedades y promociones.</span>
+                    <span>No olvides agendarnos para ver nuestras novedades y promociones.</span>
+                    <span>En brebe nos comunicaremos contigo para acordar la entrega.</span>
                   </p>
                 </div>
               </>

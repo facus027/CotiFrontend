@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
     return (
-        <div className=" py-3 bg-transparent border-3 border-t border-orange-400 rounded-xl w-full shadow-xl top-0 y left-0 -z-20 ">
+        <div className=" py-3 bg-transparent border-3 border-t border-orange-400 rounded-xl w-full shadow-xl top-0 y left-0  ">
             <div className="flex flex-col mt-8 gap-5">
                 <ul className="flex flex-row gap-3 mx-auto">
                     <li className="hover:bg-blue-300 rounded-full m-1 transition-colors"><a
