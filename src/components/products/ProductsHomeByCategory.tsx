@@ -14,18 +14,21 @@ export default function ProductsHomeByCategory({ cols, category }: ProductsHomeB
     const [currentIndex, setCurrentIndex] = useState(0);
     const productsPerPage = cols == 2 ? 6 : 4;
 
-    const { data } = useQuery({
+    const { data: productData } = useQuery({
         queryKey: ['productsHomeCategory', category],
         queryFn: () => getProductsByCategory(category),
         retry: false
     })
 
-    console.log(data)
+    console.log(productData)
 
+    //const products = productData ?? productDemo
     const products = productDemo
 
     // Cambia automáticamente cada 5 segundos, avanzando de a 6 productos
     useEffect(() => {
+        if (products.length === 0) return;
+
         const intervalId = setInterval(() => {
             setCurrentIndex((prevIndex) =>
                 (prevIndex + productsPerPage) % products.length
@@ -37,6 +40,8 @@ export default function ProductsHomeByCategory({ cols, category }: ProductsHomeB
 
     // Calcula el grupo de productos que se debe mostrar
     const getVisibleProducts = () => {
+        if (products.length === 0) return [];
+
         const visibleProducts = products.slice(currentIndex, currentIndex + productsPerPage);
 
         // Si quedan menos de 6 productos al final de la lista, concatenamos los primeros productos para completar

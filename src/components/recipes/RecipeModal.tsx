@@ -70,7 +70,9 @@ export default function RecipeDetailModal() {
                                                     <h1 className="text-3xl font-gloria font-bold mb-4">{recipe?.title}</h1>
                                                     <p className="text-gray-700 font-baloo text-base">({recipe?.tag})</p>
                                                 </div>
-                                                <h1 className='text-xl font-luckiest tracking-wider text-center mb-3'>Ingredientes</h1>
+                                                <h1 className='text-xl font-luckiest tracking-wider text-center mb-3'>
+                                                    Ingredientes
+                                                </h1>
                                                 <ul >
                                                     {recipe?.ingredients.map(ingredient => (
                                                         <li className='flex font-luckiest'
@@ -80,13 +82,15 @@ export default function RecipeDetailModal() {
                                                         </li>
                                                     ))}
                                                 </ul>
-                                                <h1 className='text-xl font-luckiest tracking-wider text-center mb-3'>Preparacion</h1>
+                                                <h1 className='text-xl font-luckiest tracking-wider text-center mb-3'>
+                                                    Preparacion
+                                                </h1>
                                                 <ul className='space-y-1'>
                                                     {recipe?.preparation.map((preparation, index) => (
-                                                        <li className='flex font-chewy text-lg w-11/12 items-center justify-center'
+                                                        <li className='flex font-chewy text-lg w-11/12 lg:items-start lg:justify-start items-center justify-center'
                                                             key={index}>
                                                             *{" "} {preparation.instruction}
-                                                            <span className='text-sm p-1 h-auto text-center rounded-2xl ml-7 font-chewy font-light'>{preparation.time}</span>
+                                                            <span className='text-sm p-1 h-auto text-center lg:text-end rounded-2xl border-yellow-light border-2 ml-7 font-chewy font-light'>{preparation.time}</span>
                                                         </li>
                                                     ))}
                                                 </ul>

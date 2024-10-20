@@ -5,7 +5,7 @@ import { Recipe, RecipeFormData,  DashboardRecipeSchema,RecipeSchema } from "../
 export async function getAllRecipe() {
 
     try {
-        const { data } = await api.get('/api/recipes');
+        const { data } = await api.get<Recipe[]>('/api/recipes');
         const response = DashboardRecipeSchema.safeParse(data);
         if (response.success) {
             return response.data

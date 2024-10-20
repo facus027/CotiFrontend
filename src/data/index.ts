@@ -45,8 +45,8 @@ export const cardsCategorie = [
         img: "fiestasPatrias",
     },
     {
-        name: "disfrases",
-        icons: "disfrases",
-        img: "disfrases",
+        name: "disfraces",
+        icons: "disfraces",
+        img: "disfraces",
     },
 ]

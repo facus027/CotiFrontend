@@ -1,4 +1,5 @@
 import ProductsHomeByCategory from "../components/products/ProductsHomeByCategory";
+import RecipeViewHome from "../components/recipes/RecipeViewHome";
 import BannerAnimate from "../components/ui/BannerAnimate";
 import BannerService from "../components/ui/BannerService";
 import CardCategory from "../components/ui/CardCategory";
@@ -24,8 +25,8 @@ export default function HomeView() {
                     <BannerService />
                 </div>
 
-                <TitleHome title={"disfrases"} />
-                <ProductsHomeByCategory cols={2} category={"disfrases"} />
+                <TitleHome title={"disfraces"} />
+                <ProductsHomeByCategory cols={2} category={"disfraces"} />
 
                 <TitleHome title={"Categorias"} />
 
@@ -49,6 +50,7 @@ export default function HomeView() {
                 </div>
 
                 <TitleHome title={"Recetas"} />
+                <RecipeViewHome />
 
             </body>
         </div>

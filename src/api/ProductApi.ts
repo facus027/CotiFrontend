@@ -1,6 +1,6 @@
 import api from "../lib/axios";
 import { isAxiosError } from "axios";
-import { DashboardProductSchema, Product, ProductFormData} from "../types";
+import { DashboardProductSchema, Product, ProductEditFormData, ProductFormData} from "../types";
 import { UpdatePrice } from "../components/admin/products/UpdatePriceModal";
 
 export async function uploadImage(formData:FormData) {
@@ -90,7 +90,7 @@ export async function getProductById( id : Product['id']) {
 }
 
 type ProductAPIType={
-    formData: ProductFormData
+    formData: ProductEditFormData
     productId: Product['id']
 }
 

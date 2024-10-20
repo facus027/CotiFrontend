@@ -1,14 +1,12 @@
 import { Link, useNavigate } from "react-router-dom";
-import ImageUpload from "../../../components/admin/products/ImageUpload";
 import { useForm } from 'react-hook-form'
-import { ProductFormData } from "../../../types";
-import { useEffect, useState } from "react";
-import FormProducts from '../../../components/admin/products/FormProducts'
+import { ProductEditFormData } from "../../../types";
 import { Product } from "../../../types";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { updateProduct } from "../../../api/ProductApi";
 import { toast } from "react-toastify";
-import ErrorMessage from "../ErrorMessage";
+import ProductEditForm from "./ProductEditForm";
+
 
 type EditProductFormProps = {
     product: Product
@@ -19,26 +17,18 @@ export default function EditProductsForm({ product, productId }: EditProductForm
 
     const navigate = useNavigate()
 
-    const [imagen, setImagen] = useState("")
 
 
-    const { register, handleSubmit, formState: { errors }, setValue } = useForm({
+
+    const { register, handleSubmit, formState: { errors } } = useForm({
         defaultValues: {
             name: product.name,
             description: product.description,
             price: product.price,
-            image: product.image,
             category: product.category
         }
     })
 
-    useEffect(() => {
-        setValue('image', imagen);
-    }, [imagen]);
-
-    const handleImage = (imageUrl: string) => {
-        setImagen(imageUrl)
-    }
 
     const queryClien = useQueryClient()
 
@@ -55,7 +45,7 @@ export default function EditProductsForm({ product, productId }: EditProductForm
         }
     })
 
-    const handleForm = (formData: ProductFormData) => {
+    const handleForm = (formData: ProductEditFormData) => {
 
         const data = {
             formData,
@@ -85,12 +75,7 @@ export default function EditProductsForm({ product, productId }: EditProductForm
 
             <div className="mt-10 bg-white shadow-lg p-10 rounder-lg">
 
-                <div className="mb-5 space-y-3 gap-5 flex">
-                    <label htmlFor="caegory" className="text-sm uppercase font-bold">
-                        Imagen del producto
-                    </label>
-                    <ImageUpload handleImage={handleImage} />
-                </div>
+
 
                 <form
                     // @ts-ignore
@@ -98,17 +83,8 @@ export default function EditProductsForm({ product, productId }: EditProductForm
                     noValidate
                 >
 
-                    <input
-                        type="hidden"
-                        {...register("image", {
-                            required: "La imagen del Producto es obligatorio",
-                        })}
-                    />
-                    {errors.image && (
-                        <ErrorMessage>{errors.image.message}</ErrorMessage>
-                    )}
 
-                    <FormProducts register={register} errors={errors} />
+                    <ProductEditForm register={register} errors={errors} />
 
                     <input
                         type="submit"

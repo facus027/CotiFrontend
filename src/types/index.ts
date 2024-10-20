@@ -1,8 +1,8 @@
 import z  from 'zod'
 
-export const CategoriesSchema = z.enum(['reposteria','decoracion','carnaval','globos','golosinas','souvenirs','decoracion Torta','combos','fiestas Patrias','disfrases', ""])
+export const CategoriesSchema = z.enum(['reposteria','decoracion','carnaval','globos','golosinas','souvenirs','decoracion Torta','combos','fiestas Patrias','disfraces', ""])
 
-export const Categories = ['reposteria','decoracion','carnaval','globos','golosinas','souvenirs','decoracion Torta','combos','fiestas Patrias','disfrases']
+export const Categories = ['reposteria','decoracion','carnaval','globos','golosinas','souvenirs','decoracion Torta','combos','fiestas Patrias','disfraces']
 
 export const ProductSchema = z.object({
     id: z.number(),
@@ -38,6 +38,8 @@ export const EditProductSchema = ProductSchema.pick({
 export type Product = z.infer<typeof ProductSchema>
 
 export type ProductFormData = Pick<Product, 'name' | 'description' | 'category' | 'image' | 'price'>
+
+export type ProductEditFormData = Pick<Product, 'name' | 'description' | 'category' | 'price'>
 
 export const ImageSchemma = z.string()
 
