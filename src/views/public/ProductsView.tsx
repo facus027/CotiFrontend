@@ -7,6 +7,7 @@ import { useState } from "react"
 import { FaCircleArrowRight } from "react-icons/fa6";
 import { FaCircleArrowLeft } from "react-icons/fa6";
 import CategoryListBox from "../../components/products/CategoryListBox"
+import SpinnerLogo from "../../components/ui/SpinnerLogo"
 
 
 export default function ProductsView() {
@@ -21,7 +22,7 @@ export default function ProductsView() {
     })
 
 
-    if (isLoading) return 'Cargando...'
+    if (isLoading) return <SpinnerLogo />
 
     if (data) return (
         <>

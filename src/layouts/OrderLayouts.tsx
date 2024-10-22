@@ -28,7 +28,7 @@ export default function OrderLayouts() {
                 <div className='p-1 rounded-full'
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}>
-                    <div className='fixed right-10 top-10 z-40'>
+                    <div className='fixed right-14 top-10 z-40'>
                         <div>
                             <span className='absolute rounded-full z-10 menu-item-a bg-orange-light p-1 ml-16 -top-3 text-white font-baloo text-2xl font-light hover:text-black'
                             >{order.length}</span>

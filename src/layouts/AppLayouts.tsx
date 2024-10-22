@@ -2,6 +2,7 @@ import { Outlet } from 'react-router-dom'
 import Header from '../components/Header'
 import Footer from '../components/ui/Footer'
 import ProductDetailModal from '../components/products/ProductDetailModal'
+import RecipeDetailModal from '../components/recipes/RecipeModal'
 
 
 export default function AppLayouts() {
@@ -19,6 +20,7 @@ export default function AppLayouts() {
                 <Footer />
             </div>
             <ProductDetailModal />
+            <RecipeDetailModal />
         </>
     )
 }

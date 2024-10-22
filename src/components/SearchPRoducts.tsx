@@ -3,6 +3,7 @@ import { useState } from "react";
 import { IoSearchSharp } from "react-icons/io5";
 import { getAllProduct } from "../api/ProductApi";
 import { Link } from "react-router-dom";
+import SpinnerLogo from "./ui/SpinnerLogo";
 
 
 
@@ -21,7 +22,7 @@ export default function SearchPRoducts() {
         queryFn: getAllProduct
     })
 
-    if (isLoading) return 'Cargando...'
+    if (isLoading) return <SpinnerLogo />
     return (
         <>
             <div className="w-96 bg-gray-100 flex -mr-32 flex-col items-center justify-center border border-amber-300 rounded-2xl p-3 gap-3 hover:border-yellow-600">

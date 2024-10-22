@@ -3,6 +3,7 @@ import { getAllProduct } from "../../api/ProductApi";
 import TableProducts from "../../components/admin/products/TableProducts";
 import { useState } from "react";
 import { IoSearchSharp } from "react-icons/io5";
+import SpinnerLogo from "../../components/ui/SpinnerLogo";
 
 
 export default function DashboardView() {
@@ -20,7 +21,7 @@ export default function DashboardView() {
 
 
 
-    if (isLoading) return 'Cargando'
+    if (isLoading) return <SpinnerLogo />
 
 
     if (data) return (

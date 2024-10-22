@@ -1,8 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
-import RecipeDetailModal from "../../components/recipes/RecipeModal";
 import SearchRecipe from "../../components/SearchRecipe";
 import { getAllRecipe } from "../../api/RecipeApi";
 import RecipeCard from "../../components/recipes/RecipeCard";
+import SpinnerLogo from "../../components/ui/SpinnerLogo";
 
 
 export default function RecipeView() {
@@ -12,7 +12,7 @@ export default function RecipeView() {
         queryFn: getAllRecipe
     })
 
-    if (isLoading) return "Cargando..."
+    if (isLoading) return <SpinnerLogo />
 
     if (data) return (
         <>
@@ -46,7 +46,6 @@ export default function RecipeView() {
                 </div>
             </div>
 
-            <RecipeDetailModal />
         </>
     )
 }

@@ -32,7 +32,7 @@ export default function ProductDetailModal() {
     if (data) return (
         <>
             <Transition appear show={show} as={Fragment}>
-                <Dialog as="div" className="relative z-10" onClose={() => navigate(location.pathname, { replace: true })}>
+                <Dialog as="div" className="relative z-30" onClose={() => navigate(location.pathname, { replace: true })}>
                     <Transition.Child
                         as={Fragment}
                         enter="ease-out duration-300"

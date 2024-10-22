@@ -3,6 +3,7 @@ import { getOrderByPendiente } from "../../../api/OrderApi"
 import OrderDetaildAdmin from "../../../components/admin/order/OrderDetaildAdmin"
 import { useParams } from "react-router-dom"
 import StatusSidebarAdmin from "../../../components/admin/order/StatusSidebarAdmin"
+import SpinnerLogo from "../../../components/ui/SpinnerLogo"
 
 
 
@@ -16,7 +17,7 @@ export default function OrderViewAdmin() {
         queryFn: () => getOrderByPendiente(status)
     })
 
-    if (isLoading) return 'Cargando.....'
+    if (isLoading) return <SpinnerLogo />
 
     return (
         <>

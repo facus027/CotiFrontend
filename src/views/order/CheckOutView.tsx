@@ -7,6 +7,7 @@ import { SiMercadopago } from "react-icons/si";
 import IconWhatsApp from "../../components/ui/IconWhatsApp";
 import { GrMapLocation } from "react-icons/gr";
 import BannerAnimate from "../../components/ui/BannerAnimate";
+import SpinnerLogo from "../../components/ui/SpinnerLogo";
 
 export default function CheckOutView() {
 
@@ -19,7 +20,7 @@ export default function CheckOutView() {
     retry: false
   })
 
-  if (isLoading) return 'Cargando...'
+  if (isLoading) return <SpinnerLogo />
 
   if (data) return (
     <div className="lg:ml-20">
@@ -27,12 +28,11 @@ export default function CheckOutView() {
         <BannerAnimate title={` ${data.name}, tu orden ha sido cargada.`} />
 
         <div className="flex flex-col lg:flex-row gap-5 mt-5">
-          {/* Sección de detalle de orden */}
+
           <div className="flex flex-col lg:w-1/3 mx-5 gap-2 mb-5">
             <OrderDetailCheck data={data} />
           </div>
 
-          {/* Sección de pago */}
           <aside className="lg:overflow-y-scroll w-full ml-4 lg:w-2/3 mt-10">
             {data.wayToPay === 'mercado pago' ? (
               <>

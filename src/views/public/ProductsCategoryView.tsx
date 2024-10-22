@@ -5,6 +5,7 @@ import CategorySidebar from "../../components/products/CategorySidebar"
 import CardProduct from "../../components/products/CardProduct"
 import BannerAnimate from "../../components/ui/BannerAnimate"
 import CategoryListBox from "../../components/products/CategoryListBox"
+import SpinnerLogo from "../../components/ui/SpinnerLogo"
 
 
 export default function ProductsCategoryView() {
@@ -17,7 +18,7 @@ export default function ProductsCategoryView() {
         retry: false
     })
 
-    if (isLoading) return 'Cargando...'
+    if (isLoading) return <SpinnerLogo />
 
     if (data) return (
         <>
