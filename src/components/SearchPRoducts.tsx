@@ -25,7 +25,7 @@ export default function SearchPRoducts() {
     if (isLoading) return <SpinnerLogo />
     return (
         <>
-            <div className="w-96 bg-gray-100 flex -mr-32 flex-col items-center justify-center border border-amber-300 rounded-2xl p-3 gap-3 hover:border-yellow-600">
+            <div className="w-80 bg-gray-100 flex -mr-32 flex-col items-center justify-center border border-amber-300 rounded-2xl p-3 gap-3 hover:border-yellow-600">
                 <div className="flex gap-4">
 
                     <IoSearchSharp size={30} />

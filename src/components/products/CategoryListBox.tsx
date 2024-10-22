@@ -10,7 +10,7 @@ export default function CategoryListBox() {
     return (
         <>
             <Listbox value={selectedPerson} onChange={setSelectedPerson}>
-                <ListboxButton className="text-3xl uppercase font-chewy p-1 flex gap-7 ">{selectedPerson.name} <img className="h-9" src={`/public/categories/icons-${selectedPerson.icons}.png`} alt="icn" /></ListboxButton>
+                <ListboxButton className="text-3xl uppercase font-chewy p-1 flex gap-7 ">{selectedPerson.name} <img className="h-9" src={selectedPerson.icons} alt="icn" /></ListboxButton>
                 <ListboxOptions className=" bg-white" anchor="bottom">
                     {cardsCategorie.map((category) => (
                         <ListboxOption key={category.icons} value={category} className="data-[focus]:bg-blue-100 flex gap-5 p-1">
