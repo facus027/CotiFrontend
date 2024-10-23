@@ -22,7 +22,7 @@ export default function ProductsHomeByCategory({ cols, category }: ProductsHomeB
 
 
 
-    const products = productData!
+    const products = productData ? productData : []
 
 
     // Cambia automáticamente cada 5 segundos, avanzando de a 6 productos
