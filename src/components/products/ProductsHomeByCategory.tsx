@@ -20,10 +20,10 @@ export default function ProductsHomeByCategory({ cols, category }: ProductsHomeB
         retry: false
     })
 
-    console.log(productData)
 
-    //const products = productData ?? productDemo
-    const products = productDemo
+
+    const products = productData!
+
 
     // Cambia automáticamente cada 5 segundos, avanzando de a 6 productos
     useEffect(() => {

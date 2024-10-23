@@ -12,7 +12,7 @@ export const cardsCategorie = [
     {
         name: "carnaval",
         icons: "https://res.cloudinary.com/dwxwejuvu/image/upload/v1729633539/csmoxqe9vccayrko0jnx.png",
-        img: "carioca",
+        img: "carnaval",
     },
     {
         name: "globos",
@@ -32,7 +32,7 @@ export const cardsCategorie = [
     {
         name: "decoracion Torta",
         icons: "https://res.cloudinary.com/dwxwejuvu/image/upload/v1729633540/j15vgqhjqu8ept8f3zg9.png",
-        img: "decoracionTorta",
+        img: "decoracion Torta",
     },
     {
         name: "combos",
@@ -42,7 +42,7 @@ export const cardsCategorie = [
     {
         name: "fiestas Patrias",
         icons: "https://res.cloudinary.com/dwxwejuvu/image/upload/v1729633540/kusflt3fy6pulpel5jjr.png",
-        img: "fiestasPatrias",
+        img: "fiestas Patrias",
     },
     {
         name: "disfraces",

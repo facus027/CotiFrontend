@@ -31,7 +31,7 @@ export default function RecipeView() {
                 </div>
 
                 <div className="mb-10  mt-5">
-                    <h2 className="text-center font-luckiest text-xl sm:text-2xl">Buscador de Recetas</h2>
+                    <h2 className="text-center font-luckiest text-2xl sm:text-2xl">Buscador.</h2>
                     <div className="ml-0 sm:ml-16">
                         <SearchRecipe />
                     </div>

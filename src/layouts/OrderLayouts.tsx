@@ -49,7 +49,7 @@ export default function OrderLayouts() {
                 <Outlet />
             </section>
 
-            <div className=' min-w-full flex flex-col lg:flex-row justify-between items-center '>
+            <div className=' min-w-full lg:hidden flex flex-col lg:flex-row justify-between items-center '>
                 <Footer />
             </div>
             <ProductDetailModal />
