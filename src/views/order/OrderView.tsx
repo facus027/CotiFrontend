@@ -35,7 +35,7 @@ export default function OrderView() {
         onSuccess: (data) => {
             toast.success('La orden cargada con exito')
             navigate(`/checkout/${data}`)
-            localStorage.removeItem('order-storage');
+
         }
     })
 

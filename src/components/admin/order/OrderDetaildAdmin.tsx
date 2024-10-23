@@ -4,12 +4,12 @@ import { Order } from "../../../types"
 import { formatCurrency } from "../../../util"
 import { toast } from 'react-toastify';
 import IconWhatsApp from "../../ui/IconWhatsApp"
-import { updateStatusById } from "../../../api/OrderApi";
+import { deleteOrder, updateStatusById } from "../../../api/OrderApi";
 import ErrorMessage from "../ErrorMessage";
 import { useNavigate } from "react-router-dom";
 
 
-export default function OrderDetaildAdmin({ data }: { data: Order }) {
+export default function OrderDetaildAdmin({ order }: { order: Order }) {
 
     const navigate = useNavigate()
 
@@ -36,21 +36,45 @@ export default function OrderDetaildAdmin({ data }: { data: Order }) {
 
     const handleUpdateCategory = (formData: { status: string }) => {
         const updateOrder = {
-            orderId: data.id,
+            orderId: order.id,
             status: formData.status
         }
         mutate(updateOrder)
     }
 
+    const queryDelete = useMutation({
+        mutationFn: deleteOrder,
+        onError: (error) => {
+            toast.error(error.message)
+        },
+        onSuccess: (data) => {
+            queryClient.invalidateQueries({ queryKey: ['ordersAdmin', order.status] })
+            toast.success(data)
+        }
+    })
+
+    const handleDelete = (orderId: Order['id']) => {
+        queryDelete.mutate(orderId)
+    }
+
     return (
         <div className=" w-full shadow-2xl rounded-2xl p-3">
+            <div className="absolute right-24 mt-3">
+                <button
+                    type="button"
+                    onClick={() => handleDelete(order.id)}
+                    className=" text-red-600 font-chewy hover:text-red-700"
+                >
+                    X Eliminar
+                </button>
+            </div>
             <div className=" border-dashed px-3 border-2 my-2 border-indigo-700">
                 <h1 className="text-2xl ">Recibo de Orden</h1>
             </div>
             <div className="mb-3 flex justify-center items-center flex-row gap-14">
-                <p>Nombre: <span>{data.name}</span></p>
-                <p>Celular: <span><IconWhatsApp name={data.name} cel={data.cel} /></span></p>
-                <p>Estado: <span>{data.status}</span> </p>
+                <p>Nombre: <span>{order.name}</span></p>
+                <p>Celular: <span><IconWhatsApp name={order.name} cel={order.cel} /></span></p>
+                <p>Estado: <span>{order.status}</span> </p>
             </div>
             <div className="border-t-2 border-dashed border-indigo-700">
                 <table className="w-full divide-y divide-gray-300">
@@ -77,7 +101,7 @@ export default function OrderDetaildAdmin({ data }: { data: Order }) {
                     </thead>
                     <tbody className="divide-y divide-gray-200">
 
-                        {data.order.map(item => (
+                        {order.order.map(item => (
                             <tr key={item.id} >
                                 <td className="whitespace-nowrap py-2 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
                                     {item.quantity}
@@ -96,10 +120,10 @@ export default function OrderDetaildAdmin({ data }: { data: Order }) {
             </div>
             <div className="border-dotted border-t-2 border-indigo-700 px-10 pt-2">
                 <div className="mb-3 flex justify-center items-center flex-col">
-                    <p>Medio de Pago: <span>'{data.wayToPay.toUpperCase()}'</span></p>
+                    <p>Medio de Pago: <span>'{order.wayToPay.toUpperCase()}'</span></p>
 
 
-                    <p className="text-xl">Total: <span>{formatCurrency(data.total)}</span></p>
+                    <p className="text-xl">Total: <span>{formatCurrency(order.total)}</span></p>
 
                 </div>
             </div>
@@ -114,7 +138,7 @@ export default function OrderDetaildAdmin({ data }: { data: Order }) {
                             {...register("status", {
                                 required: "El estado del Producto es obligatorio",
                             })}>
-                            <option value="">{data.status.toUpperCase()}</option>
+                            <option value="">{order.status.toUpperCase()}</option>
 
                             {status.map(statu => (
                                 <option key={statu} value={statu}>{statu.toUpperCase()}</option>

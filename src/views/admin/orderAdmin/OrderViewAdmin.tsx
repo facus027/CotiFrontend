@@ -27,7 +27,7 @@ export default function OrderViewAdmin() {
             <div className="max-h-screen w-2/3 bg-gray-100 items-center justify-center ml-96">
                 {data?.length !== 0 ? (data?.map(order => (
                     <div key={order.id}>
-                        <OrderDetaildAdmin data={order} />
+                        <OrderDetaildAdmin order={order} />
                     </div>
 
                 ))

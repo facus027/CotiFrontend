@@ -69,7 +69,7 @@ export default function AdminLayouts() {
                 <Outlet />
             </section>
 
-            <div className=" py-3 bg-transparent border-3 border-t border-orange-400 rounded-xl w-full shadow-xl top-0 y left-0 z-50 ">
+            <div className=" py-3 bg-transparent border-3 border-t hidden border-orange-400 rounded-xl w-full shadow-xl top-0 y left-0 z-50 ">
                 <div className="flex flex-col mt-8 gap-5">
                     <p className=" text-center"> &copy; {new Date().getFullYear()} Cotillon San Martin, Inc</p>
                 </div>

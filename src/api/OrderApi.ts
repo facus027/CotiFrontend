@@ -45,6 +45,17 @@ export async function updateStatusById({orderId,status}:updateStatusByIdProps) {
     }
 }
 
+export async function deleteOrder(orderId : Order['id']){
+    try {
+       const { data } = await api.delete<string>(`/api/order/${orderId}`);
+       return data
+    } catch (error) {
+        if(isAxiosError(error) && error.response){
+            throw new Error(error.response.data.error)
+        }
+    }
+}
+
 export async function getOrderByPendiente(status:string) {
     try {
 
