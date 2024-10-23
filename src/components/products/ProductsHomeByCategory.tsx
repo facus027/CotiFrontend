@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { productDemo } from "../../data/productsApi";
 import CardProductHome from "./CardProductHome";
 import { useQuery } from "@tanstack/react-query"
 import { getProductsByCategory } from "../../api/ProductApi"
