@@ -2,15 +2,18 @@ import { Listbox, ListboxButton, ListboxOption, ListboxOptions } from '@headless
 import { cardsCategorie } from '../../data/index'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom';
 
 export default function CategoryListBox() {
 
-    const [selectedPerson, setSelectedPerson] = useState(cardsCategorie[0])
+    const params = useParams()
 
+    const [selectedPerson, setSelectedPerson] = useState(cardsCategorie[0])
     return (
-        <>
+        <div className='flex gap-3'>
+            <h3 className='font-luckiest bg-orange-light rounded-3xl p-0.5 justify-center items-center flex'>Categorias :</h3>
             <Listbox value={selectedPerson} onChange={setSelectedPerson}>
-                <ListboxButton className="text-3xl uppercase font-chewy p-1 flex gap-7 ">{selectedPerson.name} <img className="h-9" src={selectedPerson.icons} alt="icn" /></ListboxButton>
+                <ListboxButton className="text-3xl uppercase font-chewy p-1 flex gap-7 ">{params.category}</ListboxButton>
                 <ListboxOptions className=" bg-white" anchor="bottom">
                     {cardsCategorie.map((category) => (
                         <ListboxOption key={category.icons} value={category} className="data-[focus]:bg-blue-100 flex gap-5 p-1">
@@ -20,6 +23,6 @@ export default function CategoryListBox() {
                     ))}
                 </ListboxOptions>
             </Listbox>
-        </>
+        </div>
     )
 }
