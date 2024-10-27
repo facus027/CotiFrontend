@@ -84,7 +84,7 @@ export default function CheckOutView() {
                       target="_blank"
                       className="hover:underline hover:underline-offset-4 hover:decoration-wavy"
                     >
-                      Calle Sarmiento 123
+                      Calle Sarmiento 160
                     </a>
                   </p>
                 </div>

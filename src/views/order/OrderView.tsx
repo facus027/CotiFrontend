@@ -14,10 +14,23 @@ import BannerAnumateCarrito from "../../components/ui/BannerAnumateCarrito";
 
 export default function OrderView() {
 
+    const discountCategory = 'disfraces'
+    const perctDiscount = 10
+
     const navigate = useNavigate()
 
-    const { order } = useStore()
-    const total = useMemo(() => order.reduce((total, item) => total + (item.quantity * item.price), 0), [order])
+    const { order } = useStore();
+
+    const total = useMemo(
+        () =>
+            order.reduce((total, item) => {
+                const itemTotal = item.category === discountCategory
+                    ? item.quantity * item.price * (1 - perctDiscount / 100)
+                    : item.quantity * item.price;
+                return total + itemTotal;
+            }, 0),
+        [order]
+    );
 
     const { register, handleSubmit, formState: { errors } } = useForm({
         defaultValues: {
@@ -25,19 +38,18 @@ export default function OrderView() {
             cel: "",
             wayToPay: ""
         }
-    })
+    });
 
     const { mutate } = useMutation({
         mutationFn: createOrder,
         onError: (error) => {
-            toast.error(error.message)
+            toast.error(error.message);
         },
         onSuccess: (data) => {
-            toast.success('La orden cargada con exito')
-            navigate(`/checkout/${data}`)
-
+            toast.success('La orden se cargó con éxito');
+            navigate(`/checkout/${data}`);
         }
-    })
+    });
 
     const handlerForm = (formData: OrderFormData) => {
         const data = {
@@ -46,29 +58,35 @@ export default function OrderView() {
             wayToPay: formData.wayToPay.toString(),
             total,
             order
-        }
-        mutate(data)
-
-
-    }
+        };
+        mutate(data);
+    };
 
     return (
         <div className="mt-7">
             <div className="flex flex-col items-start">
                 <BannerAnumateCarrito />
-                <p className="font-baloo text-sm">El servicio de Mercado Pago tiene un costo del (%6)</p>
+                <p className="font-baloo text-sm">
+                    El servicio de Mercado Pago tiene un costo del (%6)
+                </p>
             </div>
 
             <div className="rounded-lg flex flex-col lg:flex-row mt-5 w-full mx-auto">
                 <div className="flex flex-col w-full m-3 lg:w-2/3 mx-auto gap-2">
                     {order.length ? (
-                        order.map(item => (
+                        order.map((item) => (
                             <div key={item.id}>
-                                <OrderDetails item={item} />
+                                <OrderDetails
+                                    item={item}
+                                    perctDiscount={perctDiscount}
+                                    discountCategory={discountCategory}
+                                />
                             </div>
                         ))
                     ) : (
-                        <p className="text-center font-baloo text-2xl font-normal">No hay Productos en el Carrito</p>
+                        <p className="text-center font-baloo text-2xl font-normal">
+                            No hay Productos en el Carrito
+                        </p>
                     )}
                 </div>
 
@@ -76,9 +94,13 @@ export default function OrderView() {
                     <aside className="lg:overflow-y-scroll p-5">
                         <p className="text-start font-baloo text-2xl mb-5">
                             Total a Pagar:
-                            <span className="font-bold text-amber-500">{formatCurrency(total)}</span>
+                            <span className="font-bold text-amber-500">
+                                {formatCurrency(total)}
+                            </span>
                         </p>
-                        <h2 className="text-3xl font-luckiest tracking-wider border-t-2 border-gray-200">Contacto</h2>
+                        <h2 className="text-3xl font-luckiest tracking-wider border-t-2 border-gray-200">
+                            Contacto
+                        </h2>
 
                         <div className="mt-5">
                             <form className="flex flex-col gap-3" onSubmit={handleSubmit(handlerForm)} noValidate>
@@ -98,19 +120,23 @@ export default function OrderView() {
                                 />
                                 {errors.cel && <ErrorMessage>{errors.cel.message}</ErrorMessage>}
 
-                                <legend>Metodo de pago:</legend>
+                                <legend>Método de pago:</legend>
 
                                 <label className="flex gap-2">
-                                    <input type="checkbox" value='mercado pago'
-                                        {...register("wayToPay", { required: "El metodo de pago es obligatorio" })}
+                                    <input
+                                        type="checkbox"
+                                        value="mercado pago"
+                                        {...register("wayToPay", { required: "El método de pago es obligatorio" })}
                                     />
                                     Mercado Pago
                                 </label>
                                 {errors.wayToPay && <ErrorMessage>{errors.wayToPay.message}</ErrorMessage>}
 
                                 <label className="flex gap-2">
-                                    <input type="checkbox" value='pago efectivo'
-                                        {...register("wayToPay", { required: "El metodo de pago es obligatorio" })}
+                                    <input
+                                        type="checkbox"
+                                        value="pago efectivo"
+                                        {...register("wayToPay", { required: "El método de pago es obligatorio" })}
                                     />
                                     Pago en efectivo
                                 </label>
@@ -126,6 +152,6 @@ export default function OrderView() {
                 </div>
             </div>
         </div>
+    );
 
-    )
 }

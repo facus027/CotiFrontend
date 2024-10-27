@@ -6,9 +6,11 @@ import { useStore } from "../../store/store"
 
 type OrderDetailsProps = {
     item: OrderItems
+    perctDiscount: number
+    discountCategory: string
 }
 
-export default function OrderDetails({ item }: OrderDetailsProps) {
+export default function OrderDetails({ item, perctDiscount, discountCategory }: OrderDetailsProps) {
 
     const { increaseQuantity, decreaseQuantity, removeItems } = useStore()
 
@@ -18,16 +20,28 @@ export default function OrderDetails({ item }: OrderDetailsProps) {
                 <div className="flex flex-col md:flex-row justify-start items-center mx-auto gap-4">
                     <div className="flex-shrink-0">
                         <img className="h-24 w-36" src={item.image} alt={`Imagen_De_${item.name}`} />
-
                     </div>
 
                     <div className="flex flex-col md:flex-row md:items-center md:gap-3 w-full">
                         <div className="grid grid-cols-2 md:grid-cols-2 justify-center gap-2">
                             <div>
                                 <p className="text-lg md:text-xl font-gloria font-semibold text-start">{item.name}</p>
-                                <p className="text-xl md:text-2xl font-chewy text-amber-500 font-black text-start">
-                                    {formatCurrency(item.price)}
-                                </p>
+
+                                {item.category === discountCategory ? (
+                                    <div>
+                                        <p className="text-base bg-yellow-pastel md:text-lg font-luckiest font-extralight text-start">
+                                            {`- %${perctDiscount} solo online`}
+                                        </p>
+                                        <p className="text-lg md:text-2xl font-chewy gap-2 flex text-amber-500 font-black text-start">
+                                            {formatCurrency(item.price * (1 - perctDiscount / 100))}
+                                            <span className="text-gray-500 text-sm">{formatCurrency(item.price)}</span>
+                                        </p>
+                                    </div>
+                                ) : (
+                                    <p className="text-xl md:text-2xl font-chewy text-amber-500 font-black text-start">
+                                        {formatCurrency(item.price)}
+                                    </p>
+                                )}
                             </div>
                             <button
                                 type="button"
@@ -38,7 +52,7 @@ export default function OrderDetails({ item }: OrderDetailsProps) {
                             </button>
                         </div>
 
-                        <div className="mt-4 md:mt-0  mr-10 flex justify-between items-center w-full md:w-auto gap-5">
+                        <div className="mt-4 md:mt-0 mr-10 flex justify-between items-center w-full md:w-auto gap-5">
                             <div className="flex gap-5 px-4 py-2 bg-gray-100 w-fit rounded-lg">
                                 <button
                                     type="button"
@@ -63,12 +77,13 @@ export default function OrderDetails({ item }: OrderDetailsProps) {
 
                             <div className="flex flex-col md:flex-row justify-between items-center w-full md:w-auto gap-4">
                                 <p className="text-lg md:text-xl font-black flex flex-col justify-center text-gray-700">
-                                    Subtotal: {''}
+                                    Subtotal:{' '}
                                     <span className="font-normal font-chewy ml-2">
-                                        {formatCurrency(item.price * item.quantity)}
+                                        {item.category === discountCategory
+                                            ? formatCurrency(item.price * item.quantity * (1 - perctDiscount / 100))
+                                            : formatCurrency(item.price * item.quantity)}
                                     </span>
                                 </p>
-
                             </div>
                         </div>
                     </div>

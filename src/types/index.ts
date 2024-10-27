@@ -43,7 +43,7 @@ export type ProductEditFormData = Pick<Product, 'name' | 'description' | 'catego
 
 export const ImageSchemma = z.string()
 
-export type OrderItems = Pick<Product, 'id' | 'name' | 'image' | 'price'|'description'> & {
+export type OrderItems = Pick<Product, 'id' | 'name' | 'image' | 'price'|'description'|'category'> & {
     quantity: number,
     subtotal:number
 }

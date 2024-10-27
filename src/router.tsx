@@ -20,6 +20,9 @@ import RecipeCreateView from './views/admin/recipeAdmin/RecipeCreateView'
 
 export default function Router() {
 
+
+    //Para cambiar promociones modificar store,orderView,OrderPopup
+
     return (
         <BrowserRouter>
             <Routes>

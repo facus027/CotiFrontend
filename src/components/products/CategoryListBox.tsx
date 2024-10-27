@@ -13,7 +13,7 @@ export default function CategoryListBox() {
         <div className='flex gap-3'>
             <h3 className='font-luckiest bg-orange-light rounded-3xl p-0.5 justify-center items-center flex'>Categorias :</h3>
             <Listbox value={selectedPerson} onChange={setSelectedPerson}>
-                <ListboxButton className="text-3xl uppercase font-chewy p-1 flex gap-7 ">{params.category}</ListboxButton>
+                <ListboxButton className="text-3xl uppercase font-chewy p-1 flex gap-7 ">{params.category == "" ? "Elegir" : params.category}</ListboxButton>
                 <ListboxOptions className=" bg-white" anchor="bottom">
                     {cardsCategorie.map((category) => (
                         <ListboxOption key={category.icons} value={category} className="data-[focus]:bg-blue-100 flex gap-5 p-1">

@@ -3,8 +3,6 @@ import { formatCurrency } from "../../util";
 
 export default function OrderDetailCheck({ data }: { data: Order }) {
 
-    console.log(data);
-
     return (
         <>
             <div className="py-3 bg-transparent border-4 border-t border-orange-400 p-1 rounded-xl w-full shadow-xl">
@@ -16,7 +14,7 @@ export default function OrderDetailCheck({ data }: { data: Order }) {
 
                     <div className="mb-3 flex justify-center font-gloria font-semibold items-center flex-col text-center">
                         <h1>Cotillon San Martin</h1>
-                        <p>Dirección: <span>Calle Sarmiento 123</span></p>
+                        <p>Dirección: <span>Calle Sarmiento 160</span></p>
                         <p>Celular: <span>2634475135</span></p>
                     </div>
                 </div>
@@ -25,8 +23,8 @@ export default function OrderDetailCheck({ data }: { data: Order }) {
                     <table className="min-w-full divide-y divide-gray-300">
                         <thead>
                             <tr>
-                                <th scope="col" className="py-2 px-2 text-left text-sm font-semibold text-gray-900">Cant.</th>
-                                <th scope="col" className="py-2 px-2 text-left text-sm font-semibold text-gray-900">Descripción</th>
+                                <th scope="col" className="py-2 px-0.5 text-left text-sm font-semibold text-gray-900">Cant.</th>
+                                <th scope="col" className="py-2 px-0.5 text-left text-sm font-semibold text-gray-900">Descripción</th>
                                 <th scope="col" className="py-2 px-2 text-left text-sm font-semibold text-gray-900">Precio</th>
                                 <th scope="col" className="py-2 px-2 text-left text-sm font-semibold text-gray-900">Subtotal</th>
                             </tr>
@@ -34,8 +32,8 @@ export default function OrderDetailCheck({ data }: { data: Order }) {
                         <tbody className="divide-y divide-gray-200">
                             {data.order.map(item => (
                                 <tr key={item.id}>
-                                    <td className="whitespace-nowrap py-2 px-2 text-sm font-medium text-gray-900">{item.quantity}</td>
-                                    <td className="whitespace-nowrap py-2 px-2 text-sm text-gray-900">{item.name}</td>
+                                    <td className="whitespace-nowrap py-2 px-0.5 text-sm font-medium text-gray-900">{item.quantity}</td>
+                                    <td className="whitespace-nowrap py-2 px-0.5 text-sm text-gray-900">{item.name}</td>
                                     <td className="whitespace-nowrap py-2 px-2 text-sm text-gray-900">{formatCurrency(item.price)}</td>
                                     <td className="whitespace-nowrap py-2 px-2 text-sm text-gray-900">{formatCurrency(item.subtotal)}</td>
                                 </tr>
@@ -54,6 +52,12 @@ export default function OrderDetailCheck({ data }: { data: Order }) {
                         </p>
                         {data.wayToPay === 'mercado pago' ? (
                             <>
+                                <p className="text-sm sm:text-base font-luckiest tracking-wider font-light">
+                                    Subtotal:{" "}
+                                    <span className="font-chewy font-extralight">
+                                        {formatCurrency(data.total)}
+                                    </span>
+                                </p>
                                 <p className="text-sm sm:text-base font-luckiest tracking-wider font-light">
                                     Recargo MP:{" "}
                                     <span className="font-chewy font-extralight">

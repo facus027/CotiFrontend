@@ -13,7 +13,7 @@ export default function Footer() {
                     <h1 className="uppercase text-2xl lg:text-4xl font-luckiest tracking-wider">
                         Navegación
                     </h1>
-                    <ul className="font-chewy flex flex-col  ml-0 lg:ml-5 text-lg lg:text-2xl space-y-1">
+                    <div className="font-chewy flex flex-col  ml-0 lg:ml-5 text-lg lg:text-2xl space-y-1">
                         <Link to={"/recetas"}>* {" "}Recetas</Link>
                         <Link to={"/products"}>* {" "}Productos</Link>
                         <span className="border-2 border-orange-400 my-2"></span>
@@ -27,7 +27,7 @@ export default function Footer() {
                         <Link to={"/products/combos"}>* {" "}Productos (Combos)</Link>
                         <Link to={"/products/fiestasPatrias"}>* {" "}Productos (Fiestas Patrias)</Link>
                         <Link to={"/products/disfraces"}>* {" "}Productos (Disfraces)</Link>
-                    </ul>
+                    </div>
                 </div>
 
                 <div className="map-container text-center mb-5 lg:mb-0">
