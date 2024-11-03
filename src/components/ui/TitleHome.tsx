@@ -14,7 +14,7 @@ export default function TitleHome({ title }: { title: string }) {
                 }
             });
         }, {
-            threshold: 0.9 // Se activa cuando el 100% del elemento es visible
+            threshold: 0.1 // Se activa cuando el 10% del elemento es visible
         });
 
         if (elementRef.current) {

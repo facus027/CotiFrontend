@@ -107,7 +107,7 @@ export default function OrderView() {
                                 <input
                                     type="text"
                                     placeholder="Tu Nombre"
-                                    className="p-2 rounded-md bg-white border-gray-100 hover:border-gray-500 w-full mt-1"
+                                    className="p-2 rounded-md bg-white text-black uppercase font-luckiest tracking-wider border-gray-100 hover:border-gray-500 w-full mt-1"
                                     {...register("name", { required: "El nombre es obligatorio" })}
                                 />
                                 {errors.name && <ErrorMessage>{errors.name.message}</ErrorMessage>}
@@ -115,7 +115,7 @@ export default function OrderView() {
                                 <input
                                     type="text"
                                     placeholder="Tu Celular"
-                                    className="p-2 rounded-md bg-white border-gray-100 hover:border-gray-500 w-full mt-1"
+                                    className="p-2 rounded-md bg-white text-black uppercase font-luckiest tracking-wider border-gray-100 hover:border-gray-500 w-full mt-1"
                                     {...register("cel", { required: "El numero es obligatorio" })}
                                 />
                                 {errors.cel && <ErrorMessage>{errors.cel.message}</ErrorMessage>}
@@ -124,7 +124,7 @@ export default function OrderView() {
 
                                 <label className="flex gap-2">
                                     <input
-                                        type="checkbox"
+                                        type="radio"
                                         value="mercado pago"
                                         {...register("wayToPay", { required: "El método de pago es obligatorio" })}
                                     />
@@ -134,7 +134,7 @@ export default function OrderView() {
 
                                 <label className="flex gap-2">
                                     <input
-                                        type="checkbox"
+                                        type="radio"
                                         value="pago efectivo"
                                         {...register("wayToPay", { required: "El método de pago es obligatorio" })}
                                     />

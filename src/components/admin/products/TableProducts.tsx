@@ -4,9 +4,13 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { formatCurrency } from "../../../util";
 import { deleteProduct, updateAvailabilityProduct } from "../../../api/ProductApi";
 import { toast } from "react-toastify";
+import { useState } from "react";
+import PopupImg from './PopupImg';
 
 
 export default function TableProducts({ product }: { product: Product }) {
+
+    const [isHovered, setIsHovered] = useState(false);
 
     const queryClient = useQueryClient()
     const { mutate } = useMutation({
@@ -38,7 +42,16 @@ export default function TableProducts({ product }: { product: Product }) {
         <tbody className="divide-y divide-gray-200">
             <tr >
                 <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
-                    {product.name}
+                    <div className='p-1 rounded-full'
+                        onMouseEnter={() => setIsHovered(true)}
+                        onMouseLeave={() => setIsHovered(false)}>
+                        {product.name}
+                    </div>
+                    <div className='relative bottom-24 left-8'
+                        onMouseEnter={() => setIsHovered(true)}
+                        onMouseLeave={() => setIsHovered(false)}>
+                        {isHovered && <PopupImg img={product.image} />}
+                    </div>
                 </td>
                 <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
                     {product.description}

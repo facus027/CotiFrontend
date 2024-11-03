@@ -11,7 +11,7 @@ type ProductsHomeByCategoryProps = {
 export default function ProductsHomeByCategory({ cols, category }: ProductsHomeByCategoryProps) {
 
     const [currentIndex, setCurrentIndex] = useState(0);
-    const productsPerPage = cols == 2 ? 6 : 4;
+    const productsPerPage = cols == 2 ? 6 : 3;
 
     const { data: productData } = useQuery({
         queryKey: ['productsHomeCategory', category],

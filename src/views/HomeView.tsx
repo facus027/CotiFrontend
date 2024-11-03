@@ -34,17 +34,17 @@ export default function HomeView() {
                     <CardCategory />
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2">
-                    <div>
-                        <TitleHome title={"Combos"} />
-                        <ProductsHomeByCategory cols={1} category={"combos"} />
-                    </div>
-                    <div>
-                        <TitleHome title={"souvenirs"} />
-                        <ProductsHomeByCategory cols={1} category={"souvenirs"} />
-                    </div>
 
+                <div>
+                    <TitleHome title={"Combos"} />
+                    <ProductsHomeByCategory cols={2} category={"combos"} />
                 </div>
+                <div>
+                    <TitleHome title={"souvenirs"} />
+                    <ProductsHomeByCategory cols={2} category={"souvenirs"} />
+                </div>
+
+
                 <div className="flex justify-center items-center">
                     <Contact />
                 </div>
