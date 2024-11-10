@@ -4,14 +4,13 @@ import { useQuery } from "@tanstack/react-query"
 import { getProductsByCategory } from "../../api/ProductApi"
 
 type ProductsHomeByCategoryProps = {
-    cols: number,
     category: string
 }
 
-export default function ProductsHomeByCategory({ cols, category }: ProductsHomeByCategoryProps) {
+export default function ProductsHomeByCategory({ category }: ProductsHomeByCategoryProps) {
 
     const [currentIndex, setCurrentIndex] = useState(0);
-    const productsPerPage = cols == 2 ? 6 : 3;
+    const productsPerPage = 6
 
     const { data: productData } = useQuery({
         queryKey: ['productsHomeCategory', category],
@@ -53,7 +52,7 @@ export default function ProductsHomeByCategory({ cols, category }: ProductsHomeB
 
     return (
         <>
-            <div className={`grid grid-cols-1 lg:grid-cols-${cols} m-7 gap-5`}>
+            <div className={`grid grid-cols-1 lg:grid-cols-2 m-7 gap-5`}>
                 {getVisibleProducts().map(product => (
                     <CardProductHome key={product.id} product={product} />
                 ))}

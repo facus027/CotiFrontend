@@ -28,7 +28,7 @@ export default function HomeView() {
                 </div>
 
                 <TitleHome title={"disfraces"} />
-                <ProductsHomeByCategory cols={2} category={"disfraces"} />
+                <ProductsHomeByCategory category={"disfraces"} />
 
                 <TitleHome title={"Categorias"} />
 
@@ -37,12 +37,14 @@ export default function HomeView() {
                 </div>
 
 
+                <div className="flex">
 
-                <TitleHome title={"Combos"} />
-                <ProductsHomeByCategory cols={2} category={"combos"} />
+                    <TitleHome title={"Combos"} />
+                    <ProductsHomeByCategory category={"combos"} />
 
-                <TitleHome title={"souvenirs"} />
-                <ProductsHomeByCategory cols={2} category={"souvenirs"} />
+                    <TitleHome title={"souvenirs"} />
+                    <ProductsHomeByCategory category={"souvenirs"} />
+                </div>
 
 
 
