@@ -34,8 +34,8 @@ export default function Router() {
                 </Route>
 
                 <Route element={<OrderLayouts />}>
-                    <Route element={<ProductsView />} path='/products' />
-                    <Route element={<ProductsCategoryView />} path={`/products/:category`} />
+                    <Route element={<ProductsView />} path='/productos' />
+                    <Route element={<ProductsCategoryView />} path={`/productos/:category`} />
                 </Route>
 
                 <Route element={

@@ -33,7 +33,7 @@ export default function ProductsView() {
                 <div className=" lg:hidden mx-auto">
                     <CategoryListBox />
                 </div>
-                <h1>Todos los productos disponibles.</h1>
+                <h1 className="text-4xl ml-5 sm:text-5xl md:text-6xl font-luckiest tracking-wider mb-5 text-center md:text-left">Todos los productos disponibles.</h1>
                 <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center lg:ml-80 w-full lg:w-auto">
                     <div className="w-full mb-3">
                         <BannerAnimate title={`${data.products.length} Productos encontrados`} />

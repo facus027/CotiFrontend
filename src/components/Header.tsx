@@ -1,6 +1,7 @@
 
 import Logo from "./ui/Logo";
 import SearchPRoducts from "./SearchPRoducts";
+import { Link } from "react-router-dom";
 
 
 export default function Header() {
@@ -16,10 +17,10 @@ export default function Header() {
                 <div className="">
                     <ul className="flex flex-row h-20 items-center justify-between text-xl text-center uppercase">
                         <li className="menu-item">
-                            <a className="menu-item-a" href="/recetas">Recetas</a>
+                            <Link className="menu-item-a" to="/recetas">Recetas</Link>
                         </li>
                         <li className="menu-item">
-                            <a className="menu-item-a" href="/products">Productos</a>
+                            <Link className="menu-item-a" rel="canonical" to="/productos">Productos</Link>
                         </li>
 
                     </ul>

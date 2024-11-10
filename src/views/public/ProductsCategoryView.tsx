@@ -27,7 +27,9 @@ export default function ProductsCategoryView() {
                     <CategorySidebar />
                 </aside>
 
-                <h1>Productos por Categoria.</h1>
+                <h1 className="text-4xl ml-5 sm:text-5xl md:text-6xl font-luckiest tracking-wider mb-5 text-center md:text-left">
+                    Productos por Categoria.
+                </h1>
 
                 <div className=" lg:hidden mx-auto">
                     <CategoryListBox />

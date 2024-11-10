@@ -16,7 +16,9 @@ export default function HomeView() {
 
                 <BannerAnimate title={"Bienvenido, Cotillon San Martin está a su servicio"} />
 
-                <h1>Variedad en pruductos de cotillon para fiestas de cumpleaños y eventos </h1>
+                <h1 className="text-4xl ml-5 sm:text-5xl md:text-6xl font-luckiest tracking-wider mb-5 text-center md:text-left">
+                    Gran variedad en pruductos de cotillon para fiestas de cumpleaños y eventos.
+                </h1>
 
                 <div className="">
                     <Carousel />

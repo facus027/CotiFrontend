@@ -15,18 +15,18 @@ export default function Footer() {
                     </h1>
                     <div className="font-chewy flex flex-col  ml-0 lg:ml-5 text-lg lg:text-2xl space-y-1">
                         <Link to={"/recetas"}>* {" "}Recetas</Link>
-                        <Link to={"/products"}>* {" "}Productos</Link>
+                        <Link to={"/productos"}>* {" "}Productos</Link>
                         <span className="border-2 border-orange-400 my-2"></span>
-                        <Link to={"/products/reposteria"}>* {" "}Productos (Repostería)</Link>
-                        <Link to={"/products/decoracion"}>* {" "}Productos (Decoración)</Link>
-                        <Link to={"/products/carnaval"}>* {" "}Productos (Carnaval)</Link>
-                        <Link to={"/products/globos"}>* {" "}Productos (Globos)</Link>
-                        <Link to={"/products/golosinas"}>* {" "}Productos (Golosinas)</Link>
-                        <Link to={"/products/souvenirs"}>* {" "}Productos (Souvenirs)</Link>
-                        <Link to={"/products/decoracionTorta"}>* {" "}Productos (Decoración Torta)</Link>
-                        <Link to={"/products/combos"}>* {" "}Productos (Combos)</Link>
-                        <Link to={"/products/fiestasPatrias"}>* {" "}Productos (Fiestas Patrias)</Link>
-                        <Link to={"/products/disfraces"}>* {" "}Productos (Disfraces)</Link>
+                        <Link to={"/productos/reposteria"}>* {" "}Productos (Repostería)</Link>
+                        <Link to={"/productos/decoracion"}>* {" "}Productos (Decoración)</Link>
+                        <Link to={"/productos/carnaval"}>* {" "}Productos (Carnaval)</Link>
+                        <Link to={"/productos/globos"}>* {" "}Productos (Globos)</Link>
+                        <Link to={"/productos/golosinas"}>* {" "}Productos (Golosinas)</Link>
+                        <Link to={"/productos/souvenirs"}>* {" "}Productos (Souvenirs)</Link>
+                        <Link to={"/productos/decoracionTorta"}>* {" "}Productos (Decoración Torta)</Link>
+                        <Link to={"/productos/combos"}>* {" "}Productos (Combos)</Link>
+                        <Link to={"/productos/fiestasPatrias"}>* {" "}Productos (Fiestas Patrias)</Link>
+                        <Link to={"/productos/disfraces"}>* {" "}Productos (Disfraces)</Link>
                     </div>
                 </div>
 
