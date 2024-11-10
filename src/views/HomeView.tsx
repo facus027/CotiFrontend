@@ -42,6 +42,11 @@ export default function HomeView() {
                     <ProductsHomeByCategory category={"combos"} />
                 </div>
 
+                <div className="w-10/12 mx-auto mb-5">
+                    <TitleHome title={"souvenirs"} />
+                    <ProductsHomeByCategory category={"souvenirs"} />
+                </div>
+
 
                 <TitleHome title={"contacto"} />
 
