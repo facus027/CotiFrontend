@@ -16,6 +16,8 @@ export default function HomeView() {
 
                 <BannerAnimate title={"Bienvenido, Cotillon San Martin está a su servicio"} />
 
+                <h1>Variedad en pruductos de cotillon para fiestas de cumpleaños y eventos </h1>
+
                 <div className="">
                     <Carousel />
                 </div>
@@ -35,14 +37,13 @@ export default function HomeView() {
                 </div>
 
 
-                <div>
-                    <TitleHome title={"Combos"} />
-                    <ProductsHomeByCategory cols={2} category={"combos"} />
-                </div>
-                <div>
-                    <TitleHome title={"souvenirs"} />
-                    <ProductsHomeByCategory cols={2} category={"souvenirs"} />
-                </div>
+
+                <TitleHome title={"Combos"} />
+                <ProductsHomeByCategory cols={2} category={"combos"} />
+
+                <TitleHome title={"souvenirs"} />
+                <ProductsHomeByCategory cols={2} category={"souvenirs"} />
+
 
 
                 <div className="flex justify-center items-center">

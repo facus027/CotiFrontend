@@ -14,7 +14,7 @@ import BannerAnumateCarrito from "../../components/ui/BannerAnumateCarrito";
 
 export default function OrderView() {
 
-    const discountCategory = 'disfraces'
+    const discountCategory = 'carnaval'
     const perctDiscount = 10
 
     const navigate = useNavigate()

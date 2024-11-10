@@ -11,7 +11,7 @@ type OrderPopupProps = {
 
 export default function OrderPopup({ order }: OrderPopupProps) {
 
-    const discountCategory = 'disfraces'
+    const discountCategory = 'carnaval'
     const perctDiscount = 10
 
     const { increaseQuantity, decreaseQuantity, removeItems } = useStore()
@@ -33,7 +33,7 @@ export default function OrderPopup({ order }: OrderPopupProps) {
                     <div key={item.id} className="shadow space-y-1 p-4 bg-white border-t border-gray-200">
                         <div className="space-y-1">
                             <div className="flex justify-between items-start">
-                                <p className="text-base font-gloria font-bold">{item.name}</p>
+                                <h2 className="text-base font-gloria font-bold">{item.name}</h2>
                                 {item.category === discountCategory ? (
                                     <div>
                                         <p className="text-sm bg-yellow-pastel md:text-base font-luckiest font-extralight text-start">
@@ -79,7 +79,7 @@ export default function OrderPopup({ order }: OrderPopupProps) {
                                         type="button"
                                         onClick={() => increaseQuantity(item.id)}
                                         className="disabled:opacity-10"
-                                        disabled={item.quantity >= 5}
+                                        disabled={item.quantity >= 50}
                                     >
                                         <PlusIcon className="h-2 w-2" />
                                     </button>

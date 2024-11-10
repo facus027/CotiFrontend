@@ -40,7 +40,7 @@ export default function CheckOutView() {
                   El método de pago elegido fue '{data.wayToPay.toUpperCase()}'
                 </h2>
                 <div className="flex flex-col lg:flex-row gap-5 lg:mt-5 font-chewy text-lg lg:text-xl">
-                  <h2 className="">A continuación te dejamos el link de pago:</h2>
+                  <h3 className="">A continuación te dejamos el link de pago:</h3>
                   <p className="text-base font-extralight text-blue-800 flex gap-2">
                     <SiMercadopago size={30} />
                     <a

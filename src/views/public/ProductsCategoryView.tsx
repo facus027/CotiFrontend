@@ -26,6 +26,9 @@ export default function ProductsCategoryView() {
                 <aside className="w-full lg:w-72 h-auto lg:h-screen hidden lg:block bg-white pt-4 lg:fixed">
                     <CategorySidebar />
                 </aside>
+
+                <h1>Productos por Categoria.</h1>
+
                 <div className=" lg:hidden mx-auto">
                     <CategoryListBox />
                 </div>

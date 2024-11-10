@@ -11,7 +11,7 @@ interface Store {
     removeItems : (id: Product['id']) => void
 }
 
-const discountCategory = 'disfraces'
+const discountCategory = 'carnaval'
 const perctDiscount = 10
 
 export const useStore = create<Store>()(

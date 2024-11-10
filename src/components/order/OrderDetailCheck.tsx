@@ -9,7 +9,8 @@ export default function OrderDetailCheck({ data }: { data: Order }) {
                 <div className="flex flex-col lg:flex-row mx-auto items-center justify-around">
 
                     <div className="border-dashed px-3 border-2 my-2 border-orange-dark text-center">
-                        <h1 className="text-xl sm:text-2xl lg:text-4xl font-luckiest tracking-wider font-light">Recibo de Cobro</h1>
+                        <h1 className="text-xl sm:text-2xl lg:text-4xl font-luckiest tracking-wider font-light">
+                            Recibo de Cobro</h1>
                     </div>
 
                     <div className="mb-3 flex justify-center font-gloria font-semibold items-center flex-col text-center">

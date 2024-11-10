@@ -19,7 +19,7 @@ export default function RecipeView() {
             <div className="mt-10 ml-5 sm:ml-0">
                 <div>
                     <h1 className="text-4xl ml-5 sm:text-5xl md:text-6xl font-luckiest tracking-wider mb-5 text-center md:text-left">
-                        Recetas
+                        Recetas para festividades
                     </h1>
                     <p className="ml-0 sm:ml-10 text-lg sm:text-xl font-chewy flex flex-col text-center md:text-left">
                         Hola... queremos ofrecerte nuestro glosario de recetas, para que no pierdas tiempo en buscarlas y te concentres

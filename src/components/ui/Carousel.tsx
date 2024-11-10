@@ -54,9 +54,9 @@ export default function Carousel() {
                             <div className="flex flex-col lg:flex-row justify-around items-center gap-10 mx-auto">
                                 <div className="flex flex-col gap-10 lg:gap-40 items-center">
 
-                                    <h1 className="animate-slider-title text-black font-extrabold  tracking-wide font-chewy text-7xl lg:text-3xl lg:text-center w-40 lg:w-52">
+                                    <h2 className="animate-slider-title text-black font-extrabold  tracking-wide font-chewy text-7xl lg:text-3xl lg:text-center w-40 lg:w-52">
                                         Halloween
-                                    </h1>
+                                    </h2>
                                 </div>
                                 <div className="flex flex-col gap-10 lg:gap-40 items-center">
 
@@ -75,9 +75,9 @@ export default function Carousel() {
 
                         {slide.id == 2 && (
                             <>
-                                <h1 className="animate-slider-title bg-cover text-7xl lg:text-8xl font-luckiest text-orange-light tracking-wider font-bold absolute top-8 lg:top-10">
+                                <h2 className="animate-slider-title bg-cover text-7xl lg:text-8xl font-luckiest text-orange-light tracking-wider font-bold absolute top-8 lg:top-10">
                                     REPOSTERÍA
-                                </h1>
+                                </h2>
                                 <p className="animate-slider-description text-2xl lg:text-5xl font-chewy relative bottom-8 lg:bottom-12 left-16 lg:left-36 w-72 lg:w-96 tracking-wider text-center text-orange-light font-semibold uppercase">
                                     Productos de alta calidad al menor precio
                                 </p>
@@ -89,9 +89,9 @@ export default function Carousel() {
 
                         {slide.id == 3 && (
                             <>
-                                <h1 className="animate-slider-title bg-cover text-7xl lg:text-8xl font-chewy tracking-wider text-white font-bold absolute top-8 lg:top-10 right-8 lg:right-14">
+                                <h2 className="animate-slider-title bg-cover text-7xl lg:text-8xl font-chewy tracking-wider text-white font-bold absolute top-8 lg:top-10 right-8 lg:right-14">
                                     Carnaval
-                                </h1>
+                                </h2>
                                 <p className="animate-slider-description text-2xl lg:text-5xl font-luckiest absolute right-10 lg:right-20 w-60 lg:w-72 tracking-wider text-center text-white font-light">
                                     Los más originales y divertidos artículos de cotillón
                                 </p>

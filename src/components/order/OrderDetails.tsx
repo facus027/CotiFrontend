@@ -25,7 +25,7 @@ export default function OrderDetails({ item, perctDiscount, discountCategory }: 
                     <div className="flex flex-col md:flex-row md:items-center md:gap-3 w-full">
                         <div className="grid grid-cols-2 md:grid-cols-2 justify-center gap-2">
                             <div>
-                                <p className="text-lg md:text-xl font-gloria font-semibold text-start">{item.name}</p>
+                                <h2 className="text-lg md:text-xl font-gloria font-semibold text-start">{item.name}</h2>
 
                                 {item.category === discountCategory ? (
                                     <div>
