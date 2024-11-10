@@ -20,11 +20,6 @@ export default {
       },
       backgroundImage: {
         'banner-inicio': "url('https://res.cloudinary.com/dwxwejuvu/image/upload/v1724758834/gorq51ss3mdeuysgnswx.jpg')",
-        'banner-carnaval': "url('https://res.cloudinary.com/dwxwejuvu/image/upload/v1729792905/xt7y96l4wxwcelkbnugg.jpg')",
-        'banner-decoracion': "url(https://res.cloudinary.com/dwxwejuvu/image/upload/v1729792893/oegwllbgzjgrgcdz4zdm.jpg)",
-        'banner-globos': "url('https://res.cloudinary.com/dwxwejuvu/image/upload/v1729792875/uergnzh8ih93wnuvptyg.jpg')",
-        'banner-golosinas': "url('https://res.cloudinary.com/dwxwejuvu/image/upload/v1729792912/gkxmi2wgmauuioc3unkw.jpg')",
-        'banner-reposteria': "url('https://res.cloudinary.com/dwxwejuvu/image/upload/v1729792901/lmwfjzhbsqkqvp188bpj.jpg')",
         'banner-carrito': "url('https://res.cloudinary.com/dwxwejuvu/image/upload/v1724758834/yjg9jr9z122sykvlxvb7.jpg')",
         'banner-slider1': "url('https://res.cloudinary.com/dwxwejuvu/image/upload/v1729792234/f7olwksoyohqf5glxoi8.jpg')",
         'banner-slider2': "url('https://res.cloudinary.com/dwxwejuvu/image/upload/v1729792233/it2zld0wguay4ep4w66x.jpg')",

@@ -25,12 +25,14 @@ export default function CardProduct({ product }: { product: Product }) {
                     src={product.image}
                     alt={`imagenDe_${product.name}`}
                     title={product.name}
+                    loading="lazy"
                 />
                 <div className="absolute">
                     <img className="w-32 h-14 ml-24 -mt-10"
                         alt="Logotipo CotillonSm"
                         src="https://res.cloudinary.com/dwxwejuvu/image/upload/v1720015148/aje7gfpd898we6jjj07i.png"
                         title="Logotipo CotillonSm"
+                        loading="lazy"
                     />
                 </div>
             </div>

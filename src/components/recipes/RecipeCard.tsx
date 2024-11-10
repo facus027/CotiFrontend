@@ -14,6 +14,7 @@ export default function RecipeCard({ recipe }: { recipe: Recipe }) {
                         src={recipe.imgUrl}
                         alt={`imagenDe${recipe.title}`}
                         title={`${recipe.title}`}
+                        loading="lazy"
                     />
                     <div className="absolute top-0 right-0">
                         <img
@@ -21,6 +22,7 @@ export default function RecipeCard({ recipe }: { recipe: Recipe }) {
                             alt="Logotipo CotillonSm"
                             src="https://res.cloudinary.com/dwxwejuvu/image/upload/v1720015148/aje7gfpd898we6jjj07i.png"
                             title="Logotipo CotillonSm"
+                            loading="lazy"
                         />
                     </div>
                 </div>

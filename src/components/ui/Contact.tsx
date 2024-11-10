@@ -14,21 +14,21 @@ export default function Contact() {
                             className="flex flex-row gap-5 bg-blue-700 border-slate-200 p-3 rounded-2xl group">
                             <span className="hidden group-hover:block text-lg font-chewy">Sigenos..</span>
                             <FaFacebook size={30} />
-                            Facebook
+                            <p>Facebook</p>
                         </Link>
                         <Link to={"https://wa.me/5492634475135"} target="_blank"
                             rel="noopener noreferrer"
                             className="flex gap-5 bg-green-500 border-slate-200 p-3 rounded-2xl group">
                             <span className="hidden group-hover:block text-lg font-chewy">Agendanos..</span>
                             <FaWhatsapp size={30} />
-                            WahtsApp
+                            <p>WahtsApp</p>
                         </Link>
                         <Link to={"https://www.instagram.com/cotillon.sanmartin/"} target="_blank"
                             rel="noopener noreferrer"
                             className="flex gap-5 bg-amber-500 border-slate-200 p-3 rounded-2xl group">
                             <span className="hidden group-hover:block text-lg font-chewy">Sigenos..</span>
                             <FaInstagram size={30} />
-                            Instagram
+                            <p>Instagram</p>
                         </Link>
                     </ul>
                 </div>

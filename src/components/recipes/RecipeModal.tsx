@@ -61,6 +61,7 @@ export default function RecipeDetailModal() {
                                         <img className="w-64 h-32"
                                             alt="Logotipo CotillonSm"
                                             title="Logotipo CotillonSm"
+                                            loading="lazy"
                                             src="https://res.cloudinary.com/dwxwejuvu/image/upload/v1720015148/aje7gfpd898we6jjj07i.png" />
                                     </div>
                                     <div className=" min-h-44 bg-gray-100 flex items-center justify-center p-4 ">
@@ -70,6 +71,7 @@ export default function RecipeDetailModal() {
                                                     src={recipe?.imgUrl}
                                                     alt={`imagenDe${recipe?.title}`}
                                                     title={recipe?.title}
+                                                    loading="lazy"
                                                 />
                                             </div>
                                             <div className="p-6">

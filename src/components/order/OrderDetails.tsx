@@ -23,6 +23,7 @@ export default function OrderDetails({ item, perctDiscount, discountCategory }: 
                             src={item.image}
                             alt={`ImagenDe_${item.name}`}
                             title={item.name}
+                            loading="lazy"
                         />
                     </div>
 
