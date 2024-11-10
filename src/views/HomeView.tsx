@@ -40,13 +40,10 @@ export default function HomeView() {
                 <div className="w-10/12 mx-auto mb-5">
                     <TitleHome title={"Combos"} />
                     <ProductsHomeByCategory category={"combos"} />
-                    <div className="h-96">
-                        <TitleHome title={"souvenirs"} />
-                        <ProductsHomeByCategory category={"souvenirs"} />
-                    </div>
                 </div>
 
 
+                <TitleHome title={"contacto"} />
 
                 <div className="flex justify-center items-center">
                     <Contact />
