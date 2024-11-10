@@ -19,7 +19,11 @@ export default function OrderDetails({ item, perctDiscount, discountCategory }: 
             <div className="space-y-4">
                 <div className="flex flex-col md:flex-row justify-start items-center mx-auto gap-4">
                     <div className="flex-shrink-0">
-                        <img className="h-24 w-36" src={item.image} alt={`Imagen_De_${item.name}`} />
+                        <img className="h-24 w-36"
+                            src={item.image}
+                            alt={`ImagenDe_${item.name}`}
+                            title={item.name}
+                        />
                     </div>
 
                     <div className="flex flex-col md:flex-row md:items-center md:gap-3 w-full">

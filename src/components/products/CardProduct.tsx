@@ -21,9 +21,17 @@ export default function CardProduct({ product }: { product: Product }) {
     return (
         <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white">
             <div className=" overflow-hidden">
-                <img className="w-full h-48 bg-cover px-4 hover:scale-125 transition-transform hover:rotate-2" src={product.image} alt={product.name} />
+                <img className="w-full h-48 bg-cover px-4 hover:scale-125 transition-transform hover:rotate-2"
+                    src={product.image}
+                    alt={`imagenDe_${product.name}`}
+                    title={product.name}
+                />
                 <div className="absolute">
-                    <img className="w-32 h-14 ml-24 -mt-10" alt="Logotipo CotillonSm" src="https://res.cloudinary.com/dwxwejuvu/image/upload/v1720015148/aje7gfpd898we6jjj07i.png" />
+                    <img className="w-32 h-14 ml-24 -mt-10"
+                        alt="Logotipo CotillonSm"
+                        src="https://res.cloudinary.com/dwxwejuvu/image/upload/v1720015148/aje7gfpd898we6jjj07i.png"
+                        title="Logotipo CotillonSm"
+                    />
                 </div>
             </div>
             <div className="px-6 py-4">

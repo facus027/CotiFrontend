@@ -13,12 +13,14 @@ export default function RecipeCard({ recipe }: { recipe: Recipe }) {
                         className="w-full h-48 sm:h-64 lg:h-72 object-cover hover:scale-110 transition-transform duration-300 hover:rotate-2"
                         src={recipe.imgUrl}
                         alt={`imagenDe${recipe.title}`}
+                        title={`${recipe.title}`}
                     />
                     <div className="absolute top-0 right-0">
                         <img
                             className="w-20 sm:w-28 h-10 sm:h-14"
                             alt="Logotipo CotillonSm"
                             src="https://res.cloudinary.com/dwxwejuvu/image/upload/v1720015148/aje7gfpd898we6jjj07i.png"
+                            title="Logotipo CotillonSm"
                         />
                     </div>
                 </div>

@@ -8,6 +8,7 @@ export default function SpinnerLogo() {
                 <div className="relative flex flex-col items-center">
 
                     <img
+                        title="Logotipo CotillonSm"
                         alt="Logotipo CotillonSm"
                         src="https://res.cloudinary.com/dwxwejuvu/image/upload/v1722520949/r24lgbeiyz1j3xs3mllv.png"
                         className="w-44 h-44 lg:w-52 lg:h-52 animate-spin"

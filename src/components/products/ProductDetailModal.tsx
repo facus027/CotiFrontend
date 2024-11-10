@@ -69,7 +69,11 @@ export default function ProductDetailModal() {
                                     <div className=" min-h-44 bg-gray-100 flex items-center justify-center p-4 ">
                                         <div className="max-w-4xl w-full bg-white rounded overflow-hidden shadow-lg">
                                             <div>
-                                                <img className=" w-64 h-64 justify-center items-center mx-auto bg-cover" src={product.image} alt={product.name} />
+                                                <img className=" w-64 h-64 justify-center items-center mx-auto bg-cover"
+                                                    src={product.image}
+                                                    alt={`ImagenDe_${product.name}`}
+                                                    title={product.name}
+                                                />
                                             </div>
                                             <div className="p-6">
                                                 <h1 className="text-3xl font-gloria font-bold mb-4">{product.name}</h1>

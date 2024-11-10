@@ -40,9 +40,10 @@ export default function HomeView() {
                 <div className="w-10/12 mx-auto mb-5">
                     <TitleHome title={"Combos"} />
                     <ProductsHomeByCategory category={"combos"} />
-
-                    <TitleHome title={"souvenirs"} />
-                    <ProductsHomeByCategory category={"souvenirs"} />
+                    <div className="h-96">
+                        <TitleHome title={"souvenirs"} />
+                        <ProductsHomeByCategory category={"souvenirs"} />
+                    </div>
                 </div>
 
 

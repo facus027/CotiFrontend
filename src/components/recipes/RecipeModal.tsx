@@ -58,21 +58,28 @@ export default function RecipeDetailModal() {
 
                                     </Dialog.Title>
                                     <div className="absolute -ml-5">
-                                        <img className="w-64 h-32" alt="Logotipo CotillonSm" src="https://res.cloudinary.com/dwxwejuvu/image/upload/v1720015148/aje7gfpd898we6jjj07i.png" />
+                                        <img className="w-64 h-32"
+                                            alt="Logotipo CotillonSm"
+                                            title="Logotipo CotillonSm"
+                                            src="https://res.cloudinary.com/dwxwejuvu/image/upload/v1720015148/aje7gfpd898we6jjj07i.png" />
                                     </div>
                                     <div className=" min-h-44 bg-gray-100 flex items-center justify-center p-4 ">
                                         <div className="max-w-4xl w-full bg-white rounded overflow-hidden shadow-lg">
                                             <div>
-                                                <img className=" w-64 h-64 justify-center items-center mx-auto bg-cover" src={recipe?.imgUrl} alt={`imagenDe${recipe?.title}`} />
+                                                <img className=" w-64 h-64 justify-center items-center mx-auto bg-cover"
+                                                    src={recipe?.imgUrl}
+                                                    alt={`imagenDe${recipe?.title}`}
+                                                    title={recipe?.title}
+                                                />
                                             </div>
                                             <div className="p-6">
                                                 <div className='flex gap-5'>
                                                     <h1 className="text-3xl font-gloria font-bold mb-4">{recipe?.title}</h1>
                                                     <p className="text-gray-700 font-baloo text-base">({recipe?.tag})</p>
                                                 </div>
-                                                <h1 className='text-xl font-luckiest tracking-wider text-center mb-3'>
+                                                <h2 className='text-xl font-luckiest tracking-wider text-center mb-3'>
                                                     Ingredientes
-                                                </h1>
+                                                </h2>
                                                 <ul >
                                                     {recipe?.ingredients.map(ingredient => (
                                                         <li className='flex font-luckiest'
@@ -82,9 +89,9 @@ export default function RecipeDetailModal() {
                                                         </li>
                                                     ))}
                                                 </ul>
-                                                <h1 className='text-xl font-luckiest tracking-wider text-center mb-3'>
+                                                <h3 className='text-xl font-luckiest tracking-wider text-center mb-3'>
                                                     Preparacion
-                                                </h1>
+                                                </h3>
                                                 <ul className='space-y-1'>
                                                     {recipe?.preparation.map((preparation, index) => (
                                                         <li className='flex font-chewy text-lg w-11/12 lg:items-start lg:justify-start items-center justify-center'
