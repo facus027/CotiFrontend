@@ -37,8 +37,7 @@ export default function HomeView() {
                 </div>
 
 
-                <div className="flex">
-
+                <div className="w-10/12 mx-auto mb-5">
                     <TitleHome title={"Combos"} />
                     <ProductsHomeByCategory category={"combos"} />
 
