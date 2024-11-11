@@ -27,12 +27,13 @@ export default function ProductsCategoryView() {
                     <CategorySidebar />
                 </aside>
 
-                <h1 className="text-2xl ml-5 sm:text-3xl md:text-4xl font-luckiest tracking-wider mb-5 text-center md:text-left">
-                    Productos por Categoria.
-                </h1>
-
                 <div className=" lg:hidden mx-auto">
-                    <CategoryListBox />
+                    <h1 className="text-2xl ml-5 mb-5 sm:text-3xl md:text-4xl font-luckiest tracking-wider text-center md:text-left">
+                        Productos por Categoria.
+                    </h1>
+                    <div>
+                        <CategoryListBox />
+                    </div>
                 </div>
 
                 <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center lg:ml-80 w-full lg:w-auto">

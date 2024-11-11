@@ -17,7 +17,7 @@ export default function CategoryListBox() {
                 <ListboxOptions className=" bg-white" anchor="bottom">
                     {cardsCategorie.map((category) => (
                         <ListboxOption key={category.icons} value={category} className="data-[focus]:bg-blue-100 flex gap-5 p-1">
-                            <Link className="font-chewy ml-2 text-2xl text-center tracking-wide hover:scale-125 transition duration-200" to={`/products/${category.img}`}>{category.name}</Link>
+                            <Link className="font-chewy ml-2 text-2xl text-center tracking-wide hover:scale-125 transition duration-200" to={`/productos/${category.img}`}>{category.name}</Link>
                             <img className="h-9" src={category.icons} alt="icn" />
                         </ListboxOption>
                     ))}

@@ -11,7 +11,7 @@ export default function CategorySidebar() {
             </h1>
             {cardsCategorie.map(category => (
                 <ul key={category.name} className={`${category.name === params.category ? 'bg-oreange-pastel' : ''} flex items-center justify-between uppercase gap-2 w-full border-t border-gray-200 p-2 last-of-type:border-b`}>
-                    <Link className="font-chewy ml-2 text-2xl tracking-wide hover:scale-125 transition duration-200" to={`/products/${category.img}`}>
+                    <Link className="font-chewy ml-2 text-2xl tracking-wide hover:scale-125 transition duration-200" to={`/productos/${category.img}`}>
                         <h2>{category.name}</h2>
                     </Link>
                     <img className="h-9" src={category.icons} alt={`icon_${category.icons}`} />
