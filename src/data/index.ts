@@ -49,4 +49,9 @@ export const cardsCategorie = [
         icons: "https://res.cloudinary.com/dwxwejuvu/image/upload/v1729633959/lzibscrbkch6mw6xhwhd.png",
         img: "disfraces",
     },
+    {
+        name: "pascua",
+        icons: "https://res.cloudinary.com/dwxwejuvu/image/upload/v1742861345/ygn6gpathqczphdhuk0h.png",
+        img: "pascua",
+    },
 ]

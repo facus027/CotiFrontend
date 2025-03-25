@@ -29,8 +29,8 @@ export default function HomeView() {
                     <BannerService />
                 </div>
 
-                <TitleHome title={"disfraces"} />
-                <ProductsHomeByCategory category={"disfraces"} />
+                <TitleHome title={"pascua"} />
+                <ProductsHomeByCategory category={"pascua"} />
 
                 <TitleHome title={"Categorias"} />
 

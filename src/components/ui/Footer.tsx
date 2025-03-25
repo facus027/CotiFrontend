@@ -27,6 +27,7 @@ export default function Footer() {
                         <Link to={"/productos/combos"}>* {" "}Productos (Combos)</Link>
                         <Link to={"/productos/fiestasPatrias"}>* {" "}Productos (Fiestas Patrias)</Link>
                         <Link to={"/productos/disfraces"}>* {" "}Productos (Disfraces)</Link>
+                        <Link to={"/productos/pascua"}>* {" "}Productos (Pascua)</Link>
                     </div>
                 </div>
 
