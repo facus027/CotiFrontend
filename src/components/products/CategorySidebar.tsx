@@ -6,7 +6,7 @@ export default function CategorySidebar() {
     const params = useParams()
     return (
         <aside className=" md:w-72 lg:h-screen bg-white pt-1 -mt-36 ">
-            <h1 className=" border border-t-2 content-center py-1 text-2xl tracking-wider uppercase font-luckiest justify-center flex">
+            <h1 className=" border border-t-2 content-center py-0.5 text-xl tracking-wider uppercase font-luckiest justify-center flex">
                 <Link to={'/productos'}>Categorias</Link>
             </h1>
             {cardsCategorie.map(category => (
