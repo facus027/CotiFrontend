@@ -43,7 +43,7 @@ export default function Carousel() {
     };
 
     return (
-        <div className="relative max-w-7xl mx-auto">
+        <div className="relative w-11/12 mx-auto">
             <div className="relative w-full h-screen">
                 {slides.map((slide, index) => (
                     <div
@@ -113,5 +113,5 @@ export default function Carousel() {
         </div>
 
     );
-};
+}
 
