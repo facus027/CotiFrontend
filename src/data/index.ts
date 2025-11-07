@@ -20,6 +20,11 @@ export const cardsCategorie = [
         img: "globos",
     },
     {
+        name: "navidad",
+        icons: "https://res.cloudinary.com/dwxwejuvu/image/upload/v1762525093/wh2mscz7cfoafx7vqos0.png",
+        img: "navidad",
+    },
+    {
         name: "golosinas",
         icons: "https://res.cloudinary.com/dwxwejuvu/image/upload/v1729633539/qirttc1ormiamqhvd2fg.png",
         img: "golosinas",
