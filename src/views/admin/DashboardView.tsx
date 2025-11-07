@@ -100,7 +100,7 @@ export default function DashboardView() {
                                     </thead>
 
                                     {data.length ? (
-                                        data.map(product => ((product.name.toLowerCase().includes(searchTerm.toLowerCase()) || searchTerm === '') && (
+                                        data.map(product => ((product.name.toLowerCase().includes(searchTerm.toLowerCase()) || product.category.toLowerCase().includes(searchTerm.toLowerCase()) || searchTerm === '') && (
                                             <TableProducts key={product.id} product={product} />
                                         )))
                                     ) : (
