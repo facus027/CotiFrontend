@@ -1,8 +1,8 @@
 import z  from 'zod'
 
-export const CategoriesSchema = z.enum(['reposteria','decoracion','carnaval','globos','golosinas','souvenirs','decoracion Torta','combos','fiestas Patrias','disfraces', ""])
+export const CategoriesSchema = z.enum(['reposteria','navidad','decoracion','carnaval','globos','golosinas','souvenirs','decoracion Torta','combos','fiestas Patrias','disfraces', ""])
 
-export const Categories = ['reposteria','decoracion','carnaval','globos','golosinas','souvenirs','decoracion Torta','combos','fiestas Patrias','disfraces','pascua']
+export const Categories = ['reposteria','navidad','decoracion','carnaval','globos','golosinas','souvenirs','decoracion Torta','combos','fiestas Patrias','disfraces','pascua']
 
 export const ProductSchema = z.object({
     id: z.number(),
